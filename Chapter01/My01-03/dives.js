@@ -12,6 +12,12 @@ var dives = [
     time: 38
   },
   {
+    site: 'Maldives',
+    location: 'Japam, Montaca',
+    depth: 254,
+    time: 81
+  },
+  {
     site: 'Molnar Cave',
     location: 'Budapest, Hungary',
     depth: 98,

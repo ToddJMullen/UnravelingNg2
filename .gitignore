@@ -1,2 +1,5 @@
 node_modules/
 Chapter**/Exercise-*-*/
+*/*/app/*.js
+*/*/app/*.map
+!*/*/dives.js
