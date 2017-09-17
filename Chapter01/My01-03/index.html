@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dive Log (jQuery)</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/node_modules/core-js/client/shim.min.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h1>My Latest Dives (jQuery)</h1>
+        <div class="row" id="logbook">
+        </div>
+        <p>This is built with jQuery from the dives.js array of dive object data which is imperitive by nature. You must explicitly
+            tell jQuery every single step to accomplish what you intend and you must provide all the logic to support each
+            step of the way with exception of the libraries&apos; built in utilities and whatever reusable elements you&apos;ve
+            built yourself.
+        </p>
+        <p>By contrast, Angular uses a declarative approach in that it will accomplish the same, but will require that you express
+            what it is that you want as the end result: &ldquo;(Give me) A list of all my dive records.&rdquo;
+        </p>
+    </div>
+
+
+    divelog below<br />
+    <divelog>Loading...</divelog>
+    <br>
+    divelog ^^^^ above
+
+</body>
+
+</html>
