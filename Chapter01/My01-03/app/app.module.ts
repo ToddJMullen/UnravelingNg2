@@ -10,4 +10,8 @@ import { DiveLogComponent}    from "./dive-log.component";
     ,bootstrap: [DiveLogComponent]
 })
 
-export class AppModule{}
+export class AppModule{
+    constructor(){
+        console.log("AppModule::constructor()");
+    }
+}

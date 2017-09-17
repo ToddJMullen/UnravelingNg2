@@ -11,6 +11,7 @@
 
     <script src="systemjs.config.js"></script>
     <script>
+        console.log("index.html, System Js loaded. Calling to import app");
         System.import('app').catch(function (err) {
             console.error(err);
         });
@@ -20,9 +21,9 @@
 <body>
     <div class="container-fluid">
 
+        
         <h1>My Latest Dives (jQuery)</h1>
-        <div class="row" id="logbook">
-        </div>
+        <p>This content is in index.html</p>
         <p>This was built with jQuery from the dives.js array of dive object data which is imperitive by nature. You must explicitly
             tell jQuery every single step to accomplish what you intend and you must provide all the logic to support each
             step of the way with exception of the libraries&apos; built in utilities and whatever reusable elements you&apos;ve
@@ -34,10 +35,9 @@
     </div>
 
 
-    divelog below<br />
+    <p>&lt; divelog &gt; &dArr; &dArr; &dArr;</p>
     <divelog>Loading...</divelog>
-    <br>
-    divelog ^^^^ above
+    <p>&lt; divelog &gt; &uArr; &uArr; &uArr;</p>
 
 </body>
 

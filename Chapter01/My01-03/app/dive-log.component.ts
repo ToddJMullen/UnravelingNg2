@@ -5,7 +5,8 @@ import { Component } from "@angular/core";
     , templateUrl: "app/dive-log.template.html"
 })
 export class DiveLogComponent {
-    public diveAry = [//copied from the examples for speed
+   
+    public diveAry = [//copied from the examples for speed, but rename for my preference
         {
             site: 'Abu Gotta Ramada',
             location: 'Hurghada, Egypt',
@@ -23,8 +24,19 @@ export class DiveLogComponent {
             location: 'Budapest, Hungary',
             depth: 98,
             time: 62
+        },
+        {
+          site: 'Moodives',
+          location: 'Japam, Montaca',
+          depth: 254,
+          time: 81
         }
     ];
+
+
+    constructor(){
+        console.log("DiveLogComponent::constructor()");
+    }
 
 
 
