@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
     , templateUrl: "app/dive-log.template.html"
 })
 export class DiveLogComponent {
-    public dives = [//copied from the examples for speed
+    public diveAry = [//copied from the examples for speed
         {
             site: 'Abu Gotta Ramada',
             location: 'Hurghada, Egypt',
