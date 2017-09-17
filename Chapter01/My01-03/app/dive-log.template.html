@@ -1,6 +1,13 @@
 <small>this is the first thing in the dive-log.template.html</small>
 <div class="container-fluid">
-    <h1>My Dives Records</h1>
+    <h1>My Dive Records</h1>
+    <div class="row">
+        <div class="col-sm-4 com-sm-offset-8">
+            <input #searchBox class="form-control input-lg"
+                    placeholder="Filter Dives"
+                    (keyup)="0" >
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4"
             *ngFor="let dive of diveAry" >
