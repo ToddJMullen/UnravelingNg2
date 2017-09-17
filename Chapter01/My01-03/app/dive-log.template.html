@@ -8,6 +8,7 @@
         </div>
     </h1>
     <div class="row">
+        <p *ngIf="searchBox.value" >Active Filter: &ldquo;{{searchBox.value}}&rdquo;</p>
         <div class="col-sm-4"
             *ngFor="let dive of diveAry | contentFilter:searchBox.value" >
             <h3>{{dive.site}}</h3>
