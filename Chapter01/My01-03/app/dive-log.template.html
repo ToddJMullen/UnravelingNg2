@@ -8,9 +8,9 @@
         </div>
     </h1>
     <div class="row">
-        <p *ngIf="searchBox.value" >Active Filter: &ldquo;{{searchBox.value}}&rdquo;</p>
+        <p *ngIf="searchBox.value" >Active Dive Filter: &ldquo;{{searchBox.value}}&rdquo;</p>
         <div class="col-sm-4"
-            *ngFor="let dive of diveAry | contentFilter:searchBox.value" >
+            *ngFor="let dive of diveAry | diveFilter:searchBox.value" >
             <h3>{{dive.site}}</h3>
             <h4>{{dive.location}}</h4>
             <h4>{{dive.depth}} feet @ {{dive.time}} min.</h4>
