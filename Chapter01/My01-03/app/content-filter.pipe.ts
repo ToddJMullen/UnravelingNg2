@@ -15,7 +15,7 @@ export class ContentFilterPipe implements PipeTransform{
 
     private hasIn( propertyVal:string, search:string ):boolean{
         let bool:boolean = String(propertyVal).toLowerCase().indexOf(search.toLowerCase()) > -1;
-        console.log("ContentFilterPipe::hasIn() ", propertyVal, ", ", search, " ?", bool );
+        // console.log("ContentFilterPipe::hasIn() ", propertyVal, ", ", search, " ?", bool );
         return bool;
     }
 
