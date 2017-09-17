@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <h1>My Dives Records</h1>
+    <div class="row">
+        <div class="col-sm-4"
+            *ngFor="let dive of diveAry" >
+            <h3>{{dive.site}}</h3>
+            <h4>{{dive.location}}</h4>
+            <h4>{{dive.depth}} feet | {{dive.time}} min.</h4>
+        </div>
+    </div>
+</div>
