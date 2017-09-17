@@ -35,9 +35,13 @@ export class DiveLogComponent {
 
 
     constructor(){
-        console.log("DiveLogComponent::constructor()");
+        // console.log("DiveLogComponent::constructor(), searchBox?", this.searchBox );
     }
 
+    ngOnInit(){
+        // console.log("ngOnInit(), searchBox?", this.searchBox );
+
+    }
 
 
 
