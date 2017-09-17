@@ -16,12 +16,20 @@
             console.error(err);
         });
     </script>
+    <style>
+        body {
+            background: -moz-linear-gradient(top, rgba(207,231,250,1) 0%, rgba(207,231,250,0.92) 30%, rgba(99,147,193,0.75) 90%, rgba(99,147,193,1) 100%);
+            background: -webkit-linear-gradient(top, rgba(207,231,250,1) 0%,rgba(207,231,250,0.92) 30%,rgba(99,147,193,0.75) 90%,rgba(99,147,193,1) 100%);
+            background: linear-gradient(to bottom, rgba(207,231,250,1) 0%,rgba(207,231,250,0.92) 30%,rgba(99,147,193,0.75) 90%,rgba(99,147,193,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=0 );
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
 
-        
+
         <h1>My Latest Dives (jQuery)</h1>
         <p>This content is in index.html</p>
         <p>This was built with jQuery from the dives.js array of dive object data which is imperitive by nature. You must explicitly
@@ -32,13 +40,13 @@
         <p>By contrast, Angular uses a declarative approach in that it will accomplish the same, but will require that you express
             what it is that you want as the end result: &ldquo;(Give me) A list of all my dive records.&rdquo;
         </p>
+
+
+        <p>&lt; divelog &gt; &dArr; &dArr; &dArr;</p>
+        <divelog>Loading...</divelog>
+        <p>&lt;/ divelog &gt; &uArr; &uArr; &uArr;</p>
+
     </div>
-
-
-    <p>&lt; divelog &gt; &dArr; &dArr; &dArr;</p>
-    <divelog>Loading...</divelog>
-    <p>&lt;/ divelog &gt; &uArr; &uArr; &uArr;</p>
-
 </body>
 
 </html>
