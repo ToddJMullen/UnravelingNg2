@@ -5,8 +5,10 @@ import { Component } from "@angular/core";
     , templateUrl: "app/dive-log.template.html"
 })
 export class DiveLogComponent {
+
+    public diveAry:object[] = [];
    
-    public diveAry = [//copied from the examples for speed, but rename for my preference
+    private _diveStockAry:object[] = [
         {
             site: 'Abu Gotta Ramada',
             location: 'Hurghada, Egypt',
@@ -33,6 +35,8 @@ export class DiveLogComponent {
         }
     ];
 
+    private _index:number = 0;
+
 
     constructor(){
         // console.log("DiveLogComponent::constructor(), searchBox?", this.searchBox );
@@ -41,6 +45,21 @@ export class DiveLogComponent {
     ngOnInit(){
         // console.log("ngOnInit(), searchBox?", this.searchBox );
 
+    }
+
+    public enableAdd():boolean {
+        return this._index < this._diveStockAry.length;
+    }
+
+    public addDive():void{
+        if( this.enableAdd() ){
+            this.diveAry.push( this._diveStockAry[this._index++] );
+        }
+    }
+
+    public clearDives():void{
+        this.diveAry = [];
+        this._index = 0;
     }
 
 
