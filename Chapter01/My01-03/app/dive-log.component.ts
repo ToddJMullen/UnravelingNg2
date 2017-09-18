@@ -47,12 +47,12 @@ export class DiveLogComponent {
 
     }
 
-    public enableAdd():boolean {
+    public canAddDive():boolean {
         return this._index < this._diveStockAry.length;
     }
 
     public addDive():void{
-        if( this.enableAdd() ){
+        if( this.canAddDive() ){
             this.diveAry.push( this._diveStockAry[this._index++] );
         }
     }
