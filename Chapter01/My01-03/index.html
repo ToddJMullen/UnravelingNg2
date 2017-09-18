@@ -18,10 +18,13 @@
     </script>
     <style>
         body {
+            padding: 10px;
+            min-height: 1000px;
+            background-repeat: no-repeat;
             background: rgb(248, 255, 232);
-            background: -moz-linear-gradient(-25deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
-            background: -webkit-linear-gradient(-25deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
-            background: linear-gradient(155deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
+            background: -moz-linear-gradient(-10deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
+            background: -webkit-linear-gradient(-10deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
+            background: linear-gradient(170deg, rgba(248, 255, 232, 1) 0%, rgba(173, 247, 221, 1) 43%, rgba(58, 51, 247, 1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#3a33f7', GradientType=1);
         }
     </style>
@@ -29,24 +32,10 @@
 
 <body>
     <div class="container-fluid">
-
-
-        <h1>My Latest Dives (jQuery)</h1>
-        <p>This content is in index.html</p>
-        <p>This was built with jQuery from the dives.js array of dive object data which is imperitive by nature. You must explicitly
-            tell jQuery every single step to accomplish what you intend and you must provide all the logic to support each
-            step of the way with exception of the libraries&apos; built in utilities and whatever reusable elements you&apos;ve
-            built yourself.
-        </p>
-        <p>By contrast, Angular uses a declarative approach in that it will accomplish the same, but will require that you express
-            what it is that you want as the end result: &ldquo;(Give me) A list of all my dive records.&rdquo;
-        </p>
-
-
-        <p>&lt; divelog &gt; &dArr; &dArr; &dArr;</p>
-        <divelog>Loading...</divelog>
-        <p>&lt;/ divelog &gt; &uArr; &uArr; &uArr;</p>
-
+        <div class="row">
+            <p>This content is in index.html</p>
+            <divelog>Loading...</divelog>
+        </div>
     </div>
 </body>
 
