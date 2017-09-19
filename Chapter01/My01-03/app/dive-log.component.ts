@@ -1,40 +1,15 @@
 import { Component } from "@angular/core";
 
+import { DiveEntry }    from "./dive-entry";
+
 @Component({
     selector: "divelog"//html custom tag name
     , templateUrl: "app/dive-log.template.html"
 })
 export class DiveLogComponent {
 
-    public diveAry:object[] = [];
+    public diveAry:DiveEntry[] = [];
    
-    private _diveStockAry:object[] = [
-        {
-            site: 'Abu Gotta Ramada',
-            location: 'Hurghada, Egypt',
-            depth: 72,
-            time: 54
-        },
-        {
-            site: 'Ponte Mahoon',
-            location: 'Maehbourg, Mauritius',
-            depth: 54,
-            time: 38
-        },
-        {
-            site: 'Molnar Cave',
-            location: 'Budapest, Hungary',
-            depth: 98,
-            time: 62
-        },
-        {
-          site: 'Moodives',
-          location: 'Japam, Montaca',
-          depth: 254,
-          time: 81
-        }
-    ];
-
     private _index:number = 0;
 
 
@@ -48,12 +23,12 @@ export class DiveLogComponent {
     }
 
     public canAddDive():boolean {
-        return this._index < this._diveStockAry.length;
+        return this._index < DiveEntry.stockDivesAry.length;
     }
 
     public addDive():void{
         if( this.canAddDive() ){
-            this.diveAry.push( this._diveStockAry[this._index++] );
+            this.diveAry.push( DiveEntry.stockDivesAry[this._index++] );
         }
     }
 
