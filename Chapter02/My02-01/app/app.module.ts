@@ -7,8 +7,8 @@ import {SiteListComponent} from './site-list.component'
 @NgModule({
   imports: [BrowserModule],
   declarations: [
-    AppComponent,
-    SiteListComponent
+    AppComponent,//main / parent
+    SiteListComponent//child component
   ],
   bootstrap: [AppComponent]
 })

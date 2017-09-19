@@ -1,13 +1,12 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'yw-app',
-  template: `
-    <div class="container-fluid">
-      <h1>Dive Site Maintenance</h1>
-      <site-list-view></site-list-view>
-    </div>
-  `
+	selector: "yw-app"
+	,template: `
+	<div class="container-fluid">
+		<h1>Dive Sites Maintenance View</h1>
+		<site-list-view></site-list-view>
+	</div>
+	`
 })
-export class AppComponent {
-}
+export class AppComponent{}
