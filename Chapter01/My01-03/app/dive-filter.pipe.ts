@@ -1,8 +1,10 @@
 import {Pipe, PipeTransform}    from "@angular/core";
 
+import {DiveEntry}    from "./dive-entry";
+
 @Pipe({name: "diveFilter"})
 export class DiveFilterPipe implements PipeTransform{
-    transform(value:any[], searchFor:string ):any[]{
+    transform(value:DiveEntry[], searchFor:string ):DiveEntry[]{
         console.log("DiveFilterPipe::transform() ", searchFor );
         if( !searchFor ){ return value; };//no filter value => no filter
         return value.filter( dive => {
