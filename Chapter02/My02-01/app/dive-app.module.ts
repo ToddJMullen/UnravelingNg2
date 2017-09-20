@@ -6,7 +6,7 @@ import {DiveSiteListComponent} from './dive-site-list.component'
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [
+  declarations: [//tell angular about the classes & views that it needs to know about to build the app.
     DiveAppComponent//main / parent
     ,DiveSiteListComponent//child component
   ],
