@@ -1,23 +1,25 @@
 <div class="row">
-  <div class="col-sm-12">
-    <button class="btn btn-primary btn-lg">
-      Add new site
-    </button>
-  </div>
+	<div class="col-sm-12">
+		<button class="btn btn-primary btn-lg">
+			New Dive Site
+		</button>
+	</div>
+	<h2>Current Sites</h2>
 </div>
-<h2>List of Dive Sites</h2>
-<div class="row" *ngFor="let site of sites">
-  <div class="col-sm-8">
-    <h4>{{site.id}}: {{site.name}}</h4>
-  </div>
-  <div class="col-sm-4" style="margin-top: 5px;">
-    <div class="pull-right">
-      <button class="btn btn-warning btn-sm">
-        Edit
-      </button>
-      <button class="btn btn-danger btn-sm">
-        Delete
-      </button>
-    </div>
-  </div>
+<div class="row">
+	<div *ngFor="let site of siteAry" >
+		<div class="col-sm-4">
+			<h4>{{site.id}}: {{site.name}}, Max. Dive - {{site.maxDepth}}</h4>
+		</div>
+		<div class="col-sm-4" style="margin-top: 5px;">
+			<div class="pull-right">
+				<button class="btn btn-warning btn-sm">
+					Edit
+				</button>
+				<button class="btn btn-danger btn-sm">
+					Delete
+				</button>
+			</div>
+		</div>
+	</div>
 </div>

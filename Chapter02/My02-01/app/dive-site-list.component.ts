@@ -6,5 +6,5 @@ import {DiveSite} from './dive-site';
   templateUrl: 'app/dive-site-list.template.html'
 })
 export class DiveSiteListComponent {
-  sites = DiveSite.BestSites;
+  siteAry = DiveSite.BestSites;
 }
