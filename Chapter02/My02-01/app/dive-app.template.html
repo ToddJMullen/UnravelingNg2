@@ -1,0 +1,9 @@
+<div class="container-fluid">
+	<h1>Dive Sites Maintenance View</h1>
+	<dive-site-list *ngIf="currentView == Views.LIST "
+		[siteAry]="siteAry"
+		(onAdd)="navigateTo( Views.ADD )" ></dive-site-list>
+	<add-dive-site *ngIf="currentView == 'add'"
+		(onAdded)="navigateTo( Views.LIST )"
+		(onCancel)="navigateTo( Views.LIST )"></add-dive-site>
+</div>

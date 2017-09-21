@@ -1,12 +1,22 @@
 import {Component} from "@angular/core";
 
+import {DiveSite}	from "./dive-site";
+
 @Component({
 	selector: "dive-app"
-	,template: `
-	<div class="container-fluid">
-		<h1>Dive Sites Maintenance View</h1>
-		<dive-site-list></dive-site-list>
-	</div>
-	`
+	,templateUrl: "app/dive-app.template.html"
 })
-export class DiveAppComponent{}
+export class DiveAppComponent{
+	Views = {
+		LIST: "list"
+		,ADD: "add"
+	}
+	siteAry = DiveSite.BestSites;
+	currentView = this.Views.LIST;
+
+	navigateTo(view:string):void{
+		console.log("DiveAppComponent::navigateTo()", view);
+		this.currentView = view;
+	}
+
+}//DiveAppComponent
