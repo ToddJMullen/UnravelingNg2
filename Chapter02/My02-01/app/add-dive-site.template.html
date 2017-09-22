@@ -9,7 +9,10 @@
 				type="text" class="form-control input-lg">
 	</div>
 	<div class="col-xs-6">
-		<input placeholder="Maximum Depth" type="number" class="form-control input-lg">
+		<input #tiMaxDepth
+				placeholder="Maximum Depth"
+				(change)="newMaxDepth = tiMaxDepth.value"
+				type="number" class="form-control input-lg">
 	</div>
 </div>
 <div class="row" style="margin-top:12px;">

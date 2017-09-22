@@ -35,12 +35,12 @@ export class DiveAppComponent{
 		this.navigateTo( this.Views.ADD );
 	}//addSite()
 
-	// siteAdded( newSite:DiveSite ){
-	// 	console.log("DiveAppComponent::siteAdded()", newSite );
-	siteAdded( newSiteName:string ):void{
-		console.log("DiveAppComponent::siteAdded()", newSiteName );
-		// this.siteAry.push( newSite );
-		this.siteAry.push( {id: this.newSiteId, name: newSiteName, maxDepth: 123} );
+	siteAdded( newSite:DiveSite ):void{
+		console.log("DiveAppComponent::siteAdded()", newSite );
+	// siteAdded( newSiteName:string ):void{
+		// console.log("DiveAppComponent::siteAdded()", newSiteName );
+		this.siteAry.push( newSite );
+		// this.siteAry.push( {id: this.newSiteId, name: newSiteName, maxDepth: 123} );
 		this.navigateTo( this.Views.LIST );
 	}
 

@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: "yw-app",
+            template: "\n\t<div class=\"container-fluid\">\n\t\t<h1>Dive Sites Maintenance View</h1>\n\t\t<site-list-view></site-list-view>\n\t</div>\n\t"
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: "yw-app",
-        template: "\n\t<div class=\"container-fluid\">\n\t\t<h1>Dive Sites Maintenance View</h1>\n\t\t<site-list-view></site-list-view>\n\t</div>\n\t"
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

@@ -8,17 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var dive_site_1 = require("./dive-site");
-var SiteListComponent = (function () {
+var SiteListComponent = /** @class */ (function () {
     function SiteListComponent() {
         this.sites = dive_site_1.DiveSite.FavoriteSites;
     }
+    SiteListComponent = __decorate([
+        core_1.Component({
+            selector: 'site-list-view',
+            templateUrl: 'app/site-list.template.html'
+        })
+    ], SiteListComponent);
     return SiteListComponent;
 }());
-SiteListComponent = __decorate([
-    core_1.Component({
-        selector: 'site-list-view',
-        templateUrl: 'app/site-list.template.html'
-    })
-], SiteListComponent);
 exports.SiteListComponent = SiteListComponent;
 //# sourceMappingURL=site-list.component.js.map

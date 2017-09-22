@@ -1,10 +1,12 @@
-<h3>Edit &ldquo;{{editSite.name}}&rdquo;</h3>
+<h3>editing
+	<div class="badge">{{editSite.id}}</div>
+	 &ldquo;{{editSite.name}}&rdquo;
+</h3>
 <div class="row">
 	<div class="col-xs-6">
-		<div class="badge pull-left">{{editSite.id}}</div>
 		<input #tiSiteName
-				[value]="editSite.name"
 				placeholder="Site Name"
+				[value]="editSite.name"
 				(keyup)="editSite.name = tiSiteName.value"
 				(keyup.enter)="saveSite()"
 				type="text" class="form-control input-lg">
