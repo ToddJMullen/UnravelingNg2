@@ -20,6 +20,9 @@ export class AddDiveSiteComponent{
 	@Output() onSiteAdded = new EventEmitter<string>();
 	addSite(){
 		console.log("AddDiveSiteComponent::addSite()", this.newSiteName );
+		if( this.newSiteName.length == 0 ){
+			return;//prevent the enter key binding from saving an empty site name
+		}
 		this.onSiteAdded.emit( this.newSiteName );
 		// this.onSiteAdded.emit( {id:null, name: this.newSiteName, maxDepth: this.newMaxDepth} );
 	}
