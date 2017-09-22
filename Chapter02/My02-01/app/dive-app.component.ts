@@ -12,8 +12,10 @@ export class DiveAppComponent{
 	Views = {
 		LIST: "list"
 		,ADD: "add"
+		,EDIT: "edit"
 	}
 	siteAry:DiveSite[]	= DiveSite.BestSites;
+	siteData:DiveSite;
 	currentView:string	= this.Views.LIST;
 	newSiteId:number;
 
@@ -24,7 +26,9 @@ export class DiveAppComponent{
 		this.currentView = view;
 	}
 
-	addSite(){
+	//creation
+
+	addSite():void{
 		this.newSiteId = this.siteAry
 							.map( s => s.id )
 							.reduce( (p,c) => p < c ? c : p ) + 1;
@@ -33,10 +37,29 @@ export class DiveAppComponent{
 
 	// siteAdded( newSite:DiveSite ){
 	// 	console.log("DiveAppComponent::siteAdded()", newSite );
-	siteAdded( newSiteName:string ){
+	siteAdded( newSiteName:string ):void{
 		console.log("DiveAppComponent::siteAdded()", newSiteName );
 		// this.siteAry.push( newSite );
 		this.siteAry.push( {id: this.newSiteId, name: newSiteName, maxDepth: 123} );
+		this.navigateTo( this.Views.LIST );
+	}
+
+
+
+
+	//editing
+	editSite( site:DiveSite ):void{
+		// use cloned properties in case of cancel
+		this.siteData = {id: site.id, name: site.name, maxDepth: site.maxDepth};
+		this.navigateTo( this.Views.EDIT );
+	}
+
+	saveEdits( site:DiveSite ):void{
+		let oldSite = this.siteAry.filter( s => s.id == site.id )[0];
+		if( oldSite ){
+			oldSite.name		= site.name;
+			oldSite.maxDepth	= site.maxDepth;
+		}
 		this.navigateTo( this.Views.LIST );
 	}
 

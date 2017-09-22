@@ -2,8 +2,15 @@
 	<h1>Dive Sites Maintenance View</h1>
 	<dive-site-list *ngIf="currentView == Views.LIST "
 		[siteAry]="siteAry"
-		(onAdd)="addSite()" ></dive-site-list>
-	<add-dive-site *ngIf="currentView == 'add'"
+		(onAdd)="addSite()"
+		(onEdit)="editSite($event)" ></dive-site-list>
+
+	<add-dive-site *ngIf="currentView == Views.ADD"
 		(onSiteAdded)="siteAdded($event)"
 		[givenSiteId]="newSiteId"></add-dive-site>
+
+	<edit-dive-site *ngIf="currentView == Views.EDIT"
+		[editSite]="siteData"
+		(onSave)="saveEdits($event)"
+		(onCancel)="navigateTo( Views.LIST )"></edit-dive-site>
 </div>

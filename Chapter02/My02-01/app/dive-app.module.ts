@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {DiveAppComponent} from './dive-app.component';
 import {DiveSiteListComponent} from './dive-site-list.component'
 import {AddDiveSiteComponent} from "./add-dive-site.component"
+import {EditDiveSiteComponent}	from "./edit-dive-site.component";
 
 @NgModule({
   imports: [BrowserModule],
@@ -11,7 +12,7 @@ import {AddDiveSiteComponent} from "./add-dive-site.component"
     DiveAppComponent//main / parent
     ,DiveSiteListComponent//child component
 	,AddDiveSiteComponent
-
+	,EditDiveSiteComponent
   ],
   bootstrap: [DiveAppComponent]
 })
