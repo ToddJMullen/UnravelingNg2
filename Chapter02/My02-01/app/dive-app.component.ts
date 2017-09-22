@@ -7,6 +7,8 @@ import {DiveSite}	from "./dive-site";
 	,templateUrl: "app/dive-app.template.html"
 })
 export class DiveAppComponent{
+
+	//internal properties
 	Views = {
 		LIST: "list"
 		,ADD: "add"
@@ -15,6 +17,8 @@ export class DiveAppComponent{
 	currentView:string	= this.Views.LIST;
 	newSiteId:number;
 
+
+	// internal methods
 	navigateTo(view:string):void{
 		console.log("DiveAppComponent::navigateTo()", view);
 		this.currentView = view;
@@ -27,9 +31,13 @@ export class DiveAppComponent{
 		this.navigateTo( this.Views.ADD );
 	}//addSite()
 
+	// siteAdded( newSite:DiveSite ){
+	// 	console.log("DiveAppComponent::siteAdded()", newSite );
 	siteAdded( newSiteName:string ){
-		console.log("DiveAppComponent::siteAdded()", arguments );
-		this.siteAry.push( <DiveSite>{id: this.newSiteId, name: newSiteName} );
+		console.log("DiveAppComponent::siteAdded()", newSiteName );
+		// this.siteAry.push( newSite );
+		this.siteAry.push( {id: this.newSiteId, name: newSiteName, maxDepth: 123} );
+		this.navigateTo( this.Views.LIST );
 	}
 
 }//DiveAppComponent

@@ -1,20 +1,32 @@
-import {Component, Output, EventEmitter}		from "@angular/core";
+import {Component, Input, Output, EventEmitter}		from "@angular/core";
+
+// import {DiveSite}	from "./dive-site";
 
 @Component({
 	selector: "add-dive-site"
 	,templateUrl: "app/add-dive-site.template.html"
 })
 export class AddDiveSiteComponent{
-	@Output() onAdded = new EventEmitter();
-	@Output() onCancel = new EventEmitter();
 
-	added(){
-		console.log("AddDiveSiteComponent::added()", arguments );
-		this.onAdded.emit(null);
+	//markup properties
+	@Input() givenSiteId:number;
+
+	//internal
+	newSiteName:string;
+	newMaxDepth:number = 1;
+
+	//internal methods
+	// @Output() onSiteAdded = new EventEmitter<DiveSite>();
+	@Output() onSiteAdded = new EventEmitter<string>();
+	addSite(){
+		console.log("AddDiveSiteComponent::addSite()", this.newSiteName );
+		this.onSiteAdded.emit( this.newSiteName );
+		// this.onSiteAdded.emit( {id:null, name: this.newSiteName, maxDepth: this.newMaxDepth} );
 	}
 
+	@Output() onCancel = new EventEmitter();
 	cancel(){
-		console.log("AddDiveSiteComponent::cancel()", arguments );
+		console.log("AddDiveSiteComponent::cancel()" );
 		this.onCancel.emit(null);
 	}
 
