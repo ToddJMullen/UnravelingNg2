@@ -8,9 +8,13 @@
 	<h2>Current Sites</h2>
 </div>
 <div>
-	<div class="row" *ngFor="let site of siteAry; let i = index; let isEven = even; "
+	<div class="row"
+	 	*ngFor="let site of siteAry; let i = index; let isEven = even; let f = first; let l = last;"
 		[ngStyle]="{'background-color': i % 2 ? '#ccf' : '#cfc'}" >
 		<div class="col-xs-8"
+			[ngClass]="{evenClass: e, first: f}"
+			[class.topRowClass]="f"
+			[class.lastRowClass]="l"
 			[ngStyle]="{'font-style': isEven ? 'italic' : 'inherited'}">
 			<h4
 			[style.font-size]="(15 + 3*i) + 'px'">{{site.id}}: {{site.name}}, Max. Dive - {{site.maxDepth}}</h4>
