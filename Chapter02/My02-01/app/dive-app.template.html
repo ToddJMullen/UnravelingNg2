@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	<h1>Dive Sites Maintenance View</h1>
+
+	<div [ngSwitch]="currentView">
+		<!-- <template ngSwitchDefault> -->
+			<dive-site-list-view *ngSwitchDefault
+				[siteAry]="siteAry"
+				(onAdd)="addSite()"
+				(onEdit)="editSite($event)"
+				(onDelete)="confirmDelete($event)" ></dive-site-list-view>
+		<!-- </template> -->
+
+		<!-- <template [ngSwitchCase]="Views.ADD"> -->
+			<dive-site-add-view *ngSwitchCase="Views.ADD"
+				[givenSiteId]="newSiteId"
+				(onSiteAdded)="siteAdded($event)"
+				(onCancel)="navigateTo(Views.LIST)"></dive-site-add-view>
+		<!-- </template> -->
+
+		<!-- <template [ngSwitchCase]="Views.EDIT"> -->
+			<dive-site-edit-view *ngSwitchCase="Views.EDIT"
+				[editSite]="siteData"
+				(onSave)="saveEdits($event)"
+				(onCancel)="navigateTo( Views.LIST )"></dive-site-edit-view>
+		<!-- </template> -->
+
+		<!-- <template [ngSwitchCase]="Views.DELETE"> -->
+			<dive-site-delete-view *ngSwitchCase="Views.DELETE"
+				[deletedSite]="siteData"
+				(onDelete)="siteDeleted($event)"
+				(onCancel)="navigateTo( Views.LIST )"></dive-site-delete-view>
+		<!-- </template> -->
+	</div>
+</div>

@@ -2,4 +2,8 @@ node_modules/
 Chapter**/Exercise-*-*/
 */*/app/*.js
 */*/app/*.map
+/nbproject/
+*/*/app-og/
+*/*/diveapp/*.js
+*/*/diveapp/*.map
 !*/*/dives.js
