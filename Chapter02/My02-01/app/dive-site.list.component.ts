@@ -3,8 +3,21 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {DiveSite} from './dive-site';
 
 @Component({
-  selector: 'dive-site-list-view',
-  templateUrl: 'app/dive-site.list.template.html'
+  selector: 'dive-site-list-view'
+  ,templateUrl: 'app/dive-site.list.template.html'
+  ,styles: [`
+	  .evenRowClass{
+		  background-clor: #ddd;
+	  }
+	  .firstRowClass{
+		  border-top:  2px solid red;
+		  border-left: 2px outset red;
+	  }
+	  .lastRowClass{
+		  border-bottom: 2px solid green;
+		  border-right: 2px inset green;
+	  }
+`]
 })
 export class DiveSiteListComponent {
 	@Input() siteAry:DiveSite[];
