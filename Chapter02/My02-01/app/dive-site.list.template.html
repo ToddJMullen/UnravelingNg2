@@ -8,9 +8,10 @@
 	<h2>Current Sites</h2>
 </div>
 <div>
-	<div class="row" *ngFor="let site of siteAry; let i = index; "
+	<div class="row" *ngFor="let site of siteAry; let i = index; let isEven = even; "
 		[ngStyle]="{'background-color': i % 2 ? '#ccf' : '#cfc'}" >
-		<div class="col-xs-8">
+		<div class="col-xs-8"
+			[ngStyle]="{'font-style': isEven ? 'italic' : 'inherited'}">
 			<h4>{{site.id}}: {{site.name}}, Max. Dive - {{site.maxDepth}}</h4>
 		</div>
 		<div class="col-xs-4" style="margin-top: 4px;">
