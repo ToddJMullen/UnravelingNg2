@@ -23,7 +23,7 @@ export class DiveAppComponent{
 
 	// internal methods
 	navigateTo( view:string ):void{
-		console.log("DiveAppComponent::navigateTo()", view);
+		console.log("DiveAppComponent::navigateTo() => View ", view);
 		this.currentView = view;
 	}
 
@@ -40,8 +40,8 @@ export class DiveAppComponent{
 		console.log("DiveAppComponent::siteAdded()", newSite );
 	// siteAdded( newSiteName:string ):void{
 		// console.log("DiveAppComponent::siteAdded()", newSiteName );
-		this.siteAry.push( newSite );
 		// this.siteAry.push( {id: this.newSiteId, name: newSiteName, maxDepth: 123} );
+		this.siteAry.push( newSite );
 		this.navigateTo( this.Views.LIST );
 	}
 
@@ -56,10 +56,10 @@ export class DiveAppComponent{
 	}
 
 	saveEdits( site:DiveSite ):void{
-		let oldSite = this.siteAry.filter( s => s.id == site.id )[0];
-		if( oldSite ){
-			oldSite.name		= site.name;
-			oldSite.maxDepth	= site.maxDepth;
+		let ogSite = this.siteAry.filter( s => s.id == site.id )[0];
+		if( ogSite ){
+			ogSite.name		= site.name;
+			ogSite.maxDepth	= site.maxDepth;
 		}
 		this.navigateTo( this.Views.LIST );
 	}
