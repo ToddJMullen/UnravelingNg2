@@ -9,6 +9,9 @@ import {DiveSite} from './dive-site';
 export class DiveSiteListComponent {
 	@Input() siteAry:DiveSite[];
 
+	colorAry:string[] = ["black","yellow","green","blue","purple"];
+
+
 	@Output() onDelete = new EventEmitter();
 	deleteSite( site:DiveSite ):void{
 		console.log("DiveSiteListComponent::deleteSite(), got:", site );
@@ -27,6 +30,12 @@ export class DiveSiteListComponent {
 	edit( site:DiveSite ):void{
 		console.log("DiveSiteListComponent::edit()", site);
 		this.onEdit.emit(site);
+	}
+
+	getColor( i:number ):string{
+		return this.colorAry[i];
+		//using values as below results in errors complaining about the expresion changing.
+		// return this.colorAry[ Math.floor( this.colorAry.length * Math.random() )]
 	}
 
 }//DiveSiteListComponent

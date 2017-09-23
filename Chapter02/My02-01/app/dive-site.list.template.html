@@ -12,15 +12,18 @@
 		[ngStyle]="{'background-color': i % 2 ? '#ccf' : '#cfc'}" >
 		<div class="col-xs-8"
 			[ngStyle]="{'font-style': isEven ? 'italic' : 'inherited'}">
-			<h4>{{site.id}}: {{site.name}}, Max. Dive - {{site.maxDepth}}</h4>
+			<h4
+			[style.font-size]="(15 + 3*i) + 'px'">{{site.id}}: {{site.name}}, Max. Dive - {{site.maxDepth}}</h4>
 		</div>
 		<div class="col-xs-4" style="margin-top: 4px;">
 			<div class="pull-right">
 				<button class="btn btn-warning btn-sm"
+					[style.color]="getColor(i)"
 					(click)="edit(site)">
 					Edit
 				</button>
 				<button class="btn btn-danger btn-sm"
+					[style.color]="getColor(i)"
 					(click)="deleteSite(site)">
 					Delete
 				</button>
