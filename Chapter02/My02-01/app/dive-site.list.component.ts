@@ -9,7 +9,7 @@ import {DiveSite} from './dive-site';
 export class DiveSiteListComponent {
 	@Input() siteAry:DiveSite[];
 
-	@Output() onDelete
+	@Output() onDelete = new EventEmitter();
 	deleteSite( site:DiveSite ):void{
 		console.log("DiveSiteListComponent::deleteSite(), got:", site );
 		this.onDelete.emit(site);
