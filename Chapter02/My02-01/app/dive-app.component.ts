@@ -81,6 +81,7 @@ export class DiveAppComponent{
 		if( idx > -1 ){
 			this.siteAry.splice(idx,1);
 		}
+		this.navigateTo( this.Views.LIST );
 	}
 
 }//DiveAppComponent
