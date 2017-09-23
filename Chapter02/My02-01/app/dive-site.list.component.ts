@@ -17,6 +17,14 @@ import {DiveSite} from './dive-site';
 		  border-bottom: 2px solid green;
 		  border-right: 2px inset green;
 	  }
+	  #btnAdd{
+		  position: relative;
+		  transform: rotate(0);
+		  transition: all .2s cubic-bezier(.1,.5,.7,4.5);
+	  }
+	  #btnAdd:hover{
+		  transform: rotate(7deg);
+	  }
 `]
 })
 export class DiveSiteListComponent {
