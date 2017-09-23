@@ -5,6 +5,13 @@ import {DiveSite}	from "./dive-site";
 @Component({
 	selector: "dive-site-add-view"
 	,templateUrl: "app/dive-site.add.template.html"
+	,styles: [`
+		h3{
+			font-weight: bold;
+			color: maroon;
+		    text-decoration: underline;
+		}
+	`]
 })
 export class DiveSiteAddComponent{
 
