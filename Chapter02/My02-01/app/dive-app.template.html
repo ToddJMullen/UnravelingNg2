@@ -1,16 +1,35 @@
 <div class="container-fluid">
 	<h1>Dive Sites Maintenance View</h1>
-	<dive-site-list *ngIf="currentView == Views.LIST "
-		[siteAry]="siteAry"
-		(onAdd)="addSite()"
-		(onEdit)="editSite($event)" ></dive-site-list>
 
-	<add-dive-site *ngIf="currentView == Views.ADD"
-		(onSiteAdded)="siteAdded($event)"
-		[givenSiteId]="newSiteId"></add-dive-site>
+	<div [ngSwitch]="currentView">
+		<template ngSwitchDefault>
+			<dive-site-list *ngIf="currentView == Views.LIST "
+				[siteAry]="siteAry"
+				(onAdd)="addSite()"
+				(onEdit)="editSite($event)" ></dive-site-list>
+		</template>
 
-	<edit-dive-site *ngIf="currentView == Views.EDIT"
-		[editSite]="siteData"
-		(onSave)="saveEdits($event)"
-		(onCancel)="navigateTo( Views.LIST )"></edit-dive-site>
+		<template ngSwitchCase="Views.ADD">
+			<add-dive-site *ngIf="currentView == Views.ADD"
+				[givenSiteId]="newSiteId"
+				(onSiteAdded)="siteAdded($event)"></add-dive-site>
+		</template>
+
+		<template ngSwitchCase="Views.EDIT">
+			<edit-dive-site
+				[editSite]="siteData"
+				(onSave)="saveEdits($event)"
+				(onCancel)="navigateTo( Views.LIST )"></edit-dive-site>
+		</template>
+
+		<template ngSwitchCase="Views.DELETE">
+			<dive-delete-view
+				[deletedSite]="siteData"
+				(onDelete)="siteDeleted($event)"
+				(onCancel)="navigateTo( Views.LIST )"></dive-delete-view>
+		</template>
+	</div>
+
+
+
 </div>

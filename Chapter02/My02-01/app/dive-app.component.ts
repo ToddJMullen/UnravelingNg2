@@ -13,6 +13,7 @@ export class DiveAppComponent{
 		LIST: "list"
 		,ADD: "add"
 		,EDIT: "edit"
+		,DELETE: "delete"
 	}
 	siteAry:DiveSite[]	= DiveSite.BestSites;
 	siteData:DiveSite;
@@ -61,6 +62,24 @@ export class DiveAppComponent{
 			oldSite.maxDepth	= site.maxDepth;
 		}
 		this.navigateTo( this.Views.LIST );
+	}
+
+	deleteSite( site:DiveSite ):void{
+		this.siteData = {id: site.id, name: site.name, maxDepth: site.maxDepth};
+		this.navigateTo( this.Views.DELETE );
+	}
+
+	siteDeleted( id:number ):void{
+		console.log("DiveAppComponent::siteDeleted(), id:", id);
+		let idx = -1;
+		this.siteAry.map( (site, i) => {
+			if( site.id == id ){
+				idx = i;
+			}
+		});
+		if( idx > -1 ){
+			this.siteAry.splice(idx,1);
+		}
 	}
 
 }//DiveAppComponent
