@@ -3,10 +3,10 @@ import {Component, Input, Output, EventEmitter } from "@angular/core";
 import {DiveSite}	from "./dive-site";
 
 @Component({
-	selector: "edit-dive-site"
-	,templateUrl: "app/edit-dive-site.template.html"
+	selector: "dive-site-edit-view"
+	,templateUrl: "app/dive-site.edit.template.html"
 })
-export class EditDiveSiteComponent{
+export class DiveSiteEditComponent{
 	@Input() editSite:DiveSite;
 
 
@@ -27,4 +27,4 @@ export class EditDiveSiteComponent{
 
 
 
-}//EditDiveSiteComponent
+}//DiveSiteEditComponent

@@ -3,33 +3,31 @@
 
 	<div [ngSwitch]="currentView">
 		<template ngSwitchDefault>
-			<dive-site-list *ngIf="currentView == Views.LIST "
+			<dive-site-list-view
 				[siteAry]="siteAry"
 				(onAdd)="addSite()"
-				(onEdit)="editSite($event)" ></dive-site-list>
+				(onEdit)="editSite($event)"
+				(onDelete)="confirmDelete($event)" ></dive-site-list-view>
 		</template>
 
 		<template ngSwitchCase="Views.ADD">
-			<add-dive-site *ngIf="currentView == Views.ADD"
+			<dive-site-add-view
 				[givenSiteId]="newSiteId"
-				(onSiteAdded)="siteAdded($event)"></add-dive-site>
+				(onSiteAdded)="siteAdded($event)"></dive-site-add-view>
 		</template>
 
 		<template ngSwitchCase="Views.EDIT">
-			<edit-dive-site
+			<dive-site-edit-view
 				[editSite]="siteData"
 				(onSave)="saveEdits($event)"
-				(onCancel)="navigateTo( Views.LIST )"></edit-dive-site>
+				(onCancel)="navigateTo( Views.LIST )"></dive-site-edit-view>
 		</template>
 
 		<template ngSwitchCase="Views.DELETE">
-			<dive-delete-view
+			<dive-site-delete-view
 				[deletedSite]="siteData"
 				(onDelete)="siteDeleted($event)"
-				(onCancel)="navigateTo( Views.LIST )"></dive-delete-view>
+				(onCancel)="navigateTo( Views.LIST )"></dive-site-delete-view>
 		</template>
 	</div>
-
-
-
 </div>

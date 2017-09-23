@@ -4,10 +4,11 @@ import {Component, Input, Output, EventEmitter}		from "@angular/core";
 import { DiveSite }		from "./dive-site";
 
 @Component({
-	selector: "dive-delete-view"
-	,templateUrl: "app/dive-delete-view.template.html"
+	selector: "dive-site-delete-view"
+	,templateUrl: "app/dive-site.delete.template.html"
 })
-export class DiveDeleteComponent{
+export class DiveSiteDeleteComponent{
+
 	@Input() deletedSite:DiveSite
 
 	@Output() onDelete = new EventEmitter<number>();
@@ -22,4 +23,4 @@ export class DiveDeleteComponent{
 		this.onCancel.emit(null);
 	}
 
-}///DiveDeleteComponent
+}///DiveSiteDeleteComponent

@@ -3,10 +3,10 @@ import {Component, Input, Output, EventEmitter}		from "@angular/core";
 import {DiveSite}	from "./dive-site";
 
 @Component({
-	selector: "add-dive-site"
-	,templateUrl: "app/add-dive-site.template.html"
+	selector: "dive-site-add-view"
+	,templateUrl: "app/dive-site.add.template.html"
 })
-export class AddDiveSiteComponent{
+export class DiveSiteAddComponent{
 
 	//markup properties
 	@Input() givenSiteId:number;
@@ -34,4 +34,4 @@ export class AddDiveSiteComponent{
 		this.onCancel.emit(null);
 	}
 
-}//AddDiveSiteComponent
+}//DiveSiteAddComponent

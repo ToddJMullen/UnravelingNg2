@@ -22,7 +22,7 @@ export class DiveAppComponent{
 
 
 	// internal methods
-	navigateTo(view:string):void{
+	navigateTo( view:string ):void{
 		console.log("DiveAppComponent::navigateTo()", view);
 		this.currentView = view;
 	}
@@ -64,7 +64,8 @@ export class DiveAppComponent{
 		this.navigateTo( this.Views.LIST );
 	}
 
-	deleteSite( site:DiveSite ):void{
+	//deleting
+	confirmDelete( site:DiveSite ):void{
 		this.siteData = {id: site.id, name: site.name, maxDepth: site.maxDepth};
 		this.navigateTo( this.Views.DELETE );
 	}

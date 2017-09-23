@@ -1,13 +1,20 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
+
 import {DiveSite} from './dive-site';
 
 @Component({
-  selector: 'dive-site-list',
-  templateUrl: 'app/dive-site-list.template.html'
+  selector: 'dive-site-list-view',
+  templateUrl: 'app/dive-site.list.template.html'
 })
 export class DiveSiteListComponent {
 	@Input() siteAry:DiveSite[];
 
+	@Output() onDelete
+	deleteSite( site:DiveSite ):void{
+		console.log("DiveSiteListComponent::deleteSite(), got:", site );
+		this.onDelete.emit(site);
+
+	}
 
 	@Output() onAdd = new EventEmitter();
 	add(){
