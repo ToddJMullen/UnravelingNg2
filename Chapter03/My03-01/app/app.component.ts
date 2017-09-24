@@ -6,10 +6,20 @@ import {SiteListComponent} from './site-list.component';
   templateUrl: 'app/app.template.html'
 })
 export class AppComponent {
+  //internal properties
+  Views = {
+    LIST: "list"
+    ,ADD: "add"
+    ,EDIT: "edit"
+    ,DELETE: "delete"
+  };
   siteId: number;
-  currentView = 'list';
+  currentView = this.Views.LIST;
 
+    
+    
   navigateTo(view: string) {
+      console.log("AppComponent::navigateTo()", view );
     this.currentView = view;
   }
-}
+}//AppComponent

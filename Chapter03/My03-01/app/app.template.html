@@ -2,15 +2,15 @@
   <h1>Dive Site Maintenance</h1>
   <div [ngSwitch]="currentView">
     <site-list-view *ngSwitchDefault
-      (onAdd)="navigateTo('add')"
-      (onEdit)="siteId=$event; navigateTo('edit')"
-      (onDelete)="siteId=$event; navigateTo('delete')">
+      (onAdd)="navigateTo( Views.ADD )"
+      (onEdit)="siteId=$event; navigateTo( Views.EDIT )"
+      (onDelete)="siteId=$event; navigateTo( Views.DELETE )">
     </site-list-view>
-    <add-site-view *ngSwitchCase="'add'">
+    <add-site-view *ngSwitchCase="Views.ADD">
     </add-site-view>
-    <edit-site-view *ngSwitchCase="'edit'">
+    <edit-site-view *ngSwitchCase="Views.EDIT">
     </edit-site-view>
-    <delete-site-view *ngSwitchCase="'delete'">
+    <delete-site-view *ngSwitchCase="Views.DELETE">
     </delete-site-view>
   </div>
 </div>

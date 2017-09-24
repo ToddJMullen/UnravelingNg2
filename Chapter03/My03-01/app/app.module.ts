@@ -7,6 +7,8 @@ import {AddSiteComponent} from './add-site.component';
 import {EditSiteComponent} from './edit-site.component';
 import {DeleteSiteComponent} from './delete-site.component';
 
+import {SiteMgmtService}   from "./site-mgmt.service";
+
 @NgModule({
   imports: [BrowserModule],
   declarations: [
@@ -16,6 +18,7 @@ import {DeleteSiteComponent} from './delete-site.component';
     EditSiteComponent,
     DeleteSiteComponent
   ],
+    providers: [SiteMgmtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
+
 import {DiveSite} from './dive-site';
+import {SiteMgmtService}    from "./site-mgmt.service";
 
 @Component({
   selector: 'site-list-view',
@@ -19,19 +21,23 @@ import {DiveSite} from './dive-site';
   `]
 })
 export class SiteListComponent {
-  @Input() sites;
-  @Output() onAdd = new EventEmitter();
-  @Output() onEdit = new EventEmitter<DiveSite>();
-  @Output() onDelete = new EventEmitter<DiveSite>();
+  @Input() siteAry;
+    
+    constructor( private siteService:SiteMgmtService ){
+        this.siteAry = siteService.getAllSites();
+    }
 
+  @Output() onAdd = new EventEmitter();
   add() {
     this.onAdd.emit(null);
   }
 
+  @Output() onEdit = new EventEmitter<DiveSite>();
   edit(site: DiveSite) {
     this.onEdit.emit(site);
   }
 
+  @Output() onDelete = new EventEmitter<DiveSite>();
   delete(site: DiveSite) {
     this.onDelete.emit(site);
   }

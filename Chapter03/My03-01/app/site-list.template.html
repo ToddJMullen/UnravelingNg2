@@ -7,7 +7,7 @@
   </div>
 </div>
 <h2>List of Dive Sites</h2>
-<div class="row" *ngFor="let site of sites; let e=even; let f=first; let l=last"
+<div class="row" *ngFor="let site of siteAry; let e=even; let f=first; let l=last"
   [ngClass]="{ evenRow: e }"
   [class.topRow]="f"
   [class.bottomRow]="l">
