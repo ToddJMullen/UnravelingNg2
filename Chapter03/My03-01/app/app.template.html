@@ -6,7 +6,9 @@
       (onEdit)="siteId=$event; navigateTo( Views.EDIT )"
       (onDelete)="siteId=$event; navigateTo( Views.DELETE )">
     </site-list-view>
-    <add-site-view *ngSwitchCase="Views.ADD">
+    <add-site-view *ngSwitchCase="Views.ADD"
+    	(onClosed)="navigateTo(Views.LIST)"
+    	(onCancel)="navigateTo(Views.LIST)">
     </add-site-view>
     <edit-site-view *ngSwitchCase="Views.EDIT">
     </edit-site-view>
