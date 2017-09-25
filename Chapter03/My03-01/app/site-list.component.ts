@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
-import {DiveSite} from './dive-site';
+import {DiveSite} 			from './dive-site';
 import {SiteMgmtService}    from "./site-mgmt.service";
 
 @Component({
@@ -8,15 +8,15 @@ import {SiteMgmtService}    from "./site-mgmt.service";
   templateUrl: 'app/site-list.template.html',
   styles: [`
     .evenRow {
-      background-color: #dddddd;
+      background-color: #ddffdd;
     }
 
     .topRow {
-      border-top: 2px solid #808080;
+      border-top: 2px solid #308080;
     }
 
     .bottomRow {
-      border-bottom: 2px solid #808080;
+      border-bottom: 2px solid #808030;
     }
   `]
 })
@@ -32,9 +32,9 @@ export class SiteListComponent {
     this.onAdd.emit(null);
   }
 
-  @Output() onEdit = new EventEmitter<DiveSite>();
-  edit(site: DiveSite) {
-    this.onEdit.emit(site);
+  @Output() onEdit = new EventEmitter<number>();
+  edit( siteId:number) {
+    this.onEdit.emit(siteId);
   }
 
   @Output() onDelete = new EventEmitter<DiveSite>();
