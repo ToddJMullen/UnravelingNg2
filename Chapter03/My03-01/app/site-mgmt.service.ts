@@ -30,8 +30,8 @@ export class SiteMgmtService{
 		}
 	}
 	
-	deleteSite( site:DiveSite ):void{
-		let og = this.siteAry.filter( s => s.id == site.id )[0];
+	deleteSite( siteId:number ):void{
+		let og = this.siteAry.filter( s => s.id == siteId )[0];
 		if( og ){
 			let idx = this.siteAry.indexOf( og );
 			if( idx > -1 ){

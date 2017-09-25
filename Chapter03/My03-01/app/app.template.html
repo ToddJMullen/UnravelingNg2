@@ -14,7 +14,9 @@
 			[siteId]="siteId"
 			(onClosed)="navigateTo( Views.LIST )">
 		</edit-site-view>
-		<delete-site-view *ngSwitchCase="Views.DELETE">
+		<delete-site-view *ngSwitchCase="Views.DELETE"
+			[siteId]="siteId"
+			(onClosed)="navigateTo( Views.LIST )">
 		</delete-site-view>
 	</div>
 </div>
