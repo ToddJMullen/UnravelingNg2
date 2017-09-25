@@ -12,7 +12,7 @@ export class EditSiteComponent {
 //	@Input() siteId:number;//this kind of binding can't work, we need to attack the value to an event
 	private _siteId:number;
 	@Input() set siteId( id:number ){
-		console.log("EditSiteComponent::setSiteId(): ", this.siteId );
+		console.log("EditSiteComponent::setSiteId(): ", this._siteId );
 		this._siteId = id;
 		let site = this.siteService.getSiteById( this._siteId );
 		if( site ){
@@ -37,7 +37,7 @@ export class EditSiteComponent {
 	}
 
 	doSave():void{
-		this.siteService.saveSite( {id: this.siteId, name: this.siteName, maxDepth: this.maxDepth} );
+		this.siteService.saveSite( {id: this._siteId, name: this.siteName, maxDepth: this.maxDepth} );
 		this.onClosed.emit(null);
 	}
 
