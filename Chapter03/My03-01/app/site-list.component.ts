@@ -21,24 +21,24 @@ import {SiteMgmtService}    from "./site-mgmt.service";
   `]
 })
 export class SiteListComponent {
-  @Input() siteAry;
-    
-    constructor( private siteService:SiteMgmtService ){
-        this.siteAry = siteService.getAllSites();
-    }
+	@Input() siteAry;
 
-  @Output() onAdd = new EventEmitter();
-  add() {
-    this.onAdd.emit(null);
-  }
+	constructor( private siteService:SiteMgmtService ){
+		this.siteAry = siteService.getAllSites();
+	}
 
-  @Output() onEdit = new EventEmitter<number>();
-  edit( siteId:number) {
-    this.onEdit.emit(siteId);
-  }
+	@Output() onAdd = new EventEmitter();
+	add() {
+		this.onAdd.emit(null);
+	}
 
-  @Output() onDelete = new EventEmitter<DiveSite>();
-  delete(site: DiveSite) {
-    this.onDelete.emit(site);
-  }
+	@Output() onEdit = new EventEmitter<number>();
+	edit( siteId:number) {
+		this.onEdit.emit(siteId);
+	}
+
+	@Output() onDelete = new EventEmitter<DiveSite>();
+	delete(site: DiveSite) {
+		this.onDelete.emit(site);
+	}
 }
