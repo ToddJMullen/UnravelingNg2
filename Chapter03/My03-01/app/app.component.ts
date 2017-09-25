@@ -13,6 +13,7 @@ export class AppComponent {
     ,EDIT: "edit"
     ,DELETE: "delete"
   };
+	
   siteId: number;
   currentView = this.Views.LIST;
 
@@ -20,6 +21,6 @@ export class AppComponent {
     
   navigateTo(view: string) {
       console.log("AppComponent::navigateTo()", view );
-    this.currentView = view;
+	  this.currentView = view;
   }
 }//AppComponent
