@@ -27,6 +27,7 @@ export class SiteMgmtService{
 		let og = this.siteAry.filter( s => s.id == site.id )[0];
 		if( og ){
 			og.name = site.name;
+            og.maxDepth = site.maxDepth;
 		}
 	}
 	
