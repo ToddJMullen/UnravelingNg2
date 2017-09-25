@@ -1,7 +1,7 @@
 <small>this is the first thing in the dive-log.template.html</small>
 <div class="container-fluid">
     <h1>My Dive Records (Total: {{diveAry.length}}) </h1>
-    <div class="col-sm-4 col-sm-offset-8">
+    <div class="col-xs-4 col-xs-offset-8">
         <button class="btn btn-primary btn-lg"
             [disabled]="!canAddDive()"
             (click)="addDive()" >
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <p *ngIf="searchBox.value" >Active Dive Filter: &ldquo;{{searchBox.value}}&rdquo;</p>
-        <div class="col-sm-4"
+        <div class="col-xs-4"
             *ngFor="let dive of diveAry | diveFilter:searchBox.value" >
             <h3>{{dive.site}}</h3>
             <h4>{{dive.location}}</h4>
