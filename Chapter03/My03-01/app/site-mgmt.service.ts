@@ -18,7 +18,8 @@ export class SiteMgmtService{
 	}
 
 	addSite( newSite:DiveSite ):void{
-		newSite.id = this.siteAry.map(s => s.id).reduce( (a,b) => a > b ? a : b );
+		//convert to id array, then pick the highest value & add 1
+		newSite.id = this.siteAry.map(s => s.id).reduce( (a,b) => a > b ? a : b ) + 1;
 		this.siteAry.push( newSite );
 	}
 
