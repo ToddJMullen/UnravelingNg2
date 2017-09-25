@@ -8,22 +8,22 @@
 </div>
 <h2>List of Dive Sites</h2>
 <div class="row" *ngFor="let site of siteAry; let e=even; let f=first; let l=last"
-  [ngClass]="{ evenRow: e }"
-  [class.topRow]="f"
-  [class.bottomRow]="l">
-  <div class="col-xs-8">
-    <h4>{{site.id}}: {{site.name}}, Max Dive: {{site.maxDepth}}&apos;</h4>
-  </div>
-  <div class="col-xs-4" style="margin-top: 5px;">
-    <div class="pull-right">
-      <button class="btn btn-warning btn-sm"
-        (click)="edit(site.id)">
-        Edit
-      </button>
-      <button class="btn btn-danger btn-sm"
-        (click)="delete(site.id)">
-        Delete
-      </button>
+        [ngClass]="{ evenRow: e }"
+        [class.topRow]="f"
+        [class.bottomRow]="l">
+    <div class="col-xs-8">
+        <h4>{{site.id}}: {{site.name}}, Max Dive: {{site.maxDepth}}&apos;</h4>
     </div>
-  </div>
+    <div class="col-xs-4" style="margin-top: 5px;">
+        <div class="">
+          <button class="btn btn-warning btn-sm"
+            (click)="edit(site.id)">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm"
+            (click)="delete(site.id)">
+            Delete
+          </button>
+        </div>
+    </div>
 </div>
