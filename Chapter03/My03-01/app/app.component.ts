@@ -7,20 +7,19 @@ import {SiteListComponent} from './site-list.component';
 })
 export class AppComponent {
   //internal properties
-  Views = {
-    LIST: "list"
-    ,ADD: "add"
-    ,EDIT: "edit"
-    ,DELETE: "delete"
-  };
-	
-  siteId: number;
-  currentView = this.Views.LIST;
+    Views = {
+        LIST: "list"
+        ,ADD: "add"
+        ,EDIT: "edit"
+        ,DELETE: "delete"
+    };
 
-    
-    
-  navigateTo(view: string) {
-      console.log("AppComponent::navigateTo()", view );
-	  this.currentView = view;
-  }
+    siteId: number;
+    currentView = this.Views.LIST;
+
+    navigateTo(view: string) {
+        console.log("AppComponent::navigateTo()", view );
+        this.currentView = view;
+    }
+
 }//AppComponent
