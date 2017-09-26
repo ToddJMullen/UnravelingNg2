@@ -10,15 +10,15 @@ import {DeleteSiteComponent} from './delete-site.component';
 import {SiteMgmtService}   from "./site-mgmt.service";
 
 @NgModule({
-  imports: [BrowserModule],
-  declarations: [
-    AppComponent,
-    SiteListComponent,
-    AddSiteComponent,
-    EditSiteComponent,
-    DeleteSiteComponent
-  ],
+    imports: [BrowserModule],
+    declarations: [
+        AppComponent,
+        SiteListComponent,
+        AddSiteComponent,
+        EditSiteComponent,
+        DeleteSiteComponent
+    ],
     providers: [SiteMgmtService],
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
