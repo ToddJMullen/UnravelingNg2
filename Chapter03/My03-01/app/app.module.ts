@@ -9,6 +9,8 @@ import {DeleteSiteComponent} from './delete-site.component';
 
 import {SiteMgmtService}   from "./site-mgmt.service";
 
+import {ActionableDirective}   from "./actionable.directive";
+
 @NgModule({
     imports: [BrowserModule],
     declarations: [
@@ -16,7 +18,9 @@ import {SiteMgmtService}   from "./site-mgmt.service";
         SiteListComponent,
         AddSiteComponent,
         EditSiteComponent,
-        DeleteSiteComponent
+        DeleteSiteComponent,
+
+        ActionableDirective
     ],
     providers: [SiteMgmtService],
     bootstrap: [AppComponent]
