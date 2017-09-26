@@ -5,6 +5,13 @@ import {DiveSite}	from "./dive-site";
 
 @Injectable()
 export class SiteMgmtService{
+
+    Paths = {
+        LIST: "/list"
+        ,ADD: "/add"
+        ,EDIT: "/edit"
+        ,DELETE: "/delete"
+    };
 	
 	private siteAry:DiveSite[] = DiveSite.FavoriteSites.slice(0);
 

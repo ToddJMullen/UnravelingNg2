@@ -1,5 +1,7 @@
 <div class="container-fluid">
 	<h1>Dive Site Maintenance</h1>
+    <router-outlet></router-outlet>
+<!-- all replaced by the routing
 	<div [ngSwitch]="currentView">
 		<site-list-view *ngSwitchDefault
 			(onAdd)="navigateTo( Views.ADD )"
@@ -19,4 +21,5 @@
 			(onClosed)="navigateTo( Views.LIST )">
 		</delete-site-view>
 	</div>
+-->
 </div>
