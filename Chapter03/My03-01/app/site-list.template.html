@@ -9,7 +9,7 @@
 <h2>List of Dive Sites</h2>
 <div class="row" *ngFor="let site of siteAry; let e=even; let f=first; let l=last"
         [ngClass]="{ evenRow: e }"
-        ywActionable
+        ywActionable="#6fe" (onAction)="edit(site.id)"
         [class.topRow]="f"
         [class.bottomRow]="l">
     <div class="col-xs-8">

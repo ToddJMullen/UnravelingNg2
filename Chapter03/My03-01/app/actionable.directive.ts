@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostListener } from "@angular/core";
+import { Input, Output, EventEmitter } from "@angular/core";
 
 @Directive({
     selector: "[ywActionable]"
@@ -9,13 +10,26 @@ export class ActionableDirective{
         console.log("ActionableDirective()", element );
     }
 
-    @HostListener('mouseenter') onMouseEnter(){
-        this.setAppearance( "#aaa", "pointer", 7 );
+    @Input('ywActionable')
+    backgroundColor:string;
+
+    @Output() onAction = new EventEmitter();
+    @HostListener("click")
+    onClick(){
+        console.log("ActionableDirective::onClick()")
+        this.onAction.emit(null);
     }
 
-    @HostListener('mouseleave') onMouseLeave(){
+    @HostListener('mouseenter')
+    onMouseEnter(){
+        this.setAppearance( this.backgroundColor || "#aaa", "pointer", 7 );
+    }
+
+    @HostListener('mouseleave')
+    onMouseLeave(){
         this.setAppearance( null, null, 0 );
     }
+
 
 
     setAppearance( color:string, cursor:string, degs ){
