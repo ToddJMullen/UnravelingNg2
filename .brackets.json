@@ -8,6 +8,6 @@
 		"nbproject"
     ],
     "bb.beautify.languages": {
-        "javascript": "ts"
+        "typescript": "js"
     }
 }
