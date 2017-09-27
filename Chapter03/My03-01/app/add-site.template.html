@@ -9,18 +9,18 @@
   <div class="col-xs-6">
   	<input #tiMaxDepth class="form-control input-lg" type="number"
   		placeholder="Maximum Depth" min="0" value="0"
-  		(keyup)="maxDepth=tiMaxDepth.value"
+  		(change)="maxDepth=tiMaxDepth.value"
   		(keyup.enter)="doAdd()" />
   </div>
 </div>
 <div class="row" style="margin-top: 12px;">
   <div class="col-xs-6">
-    <button class="btn btn-success btn"
+    <button class="btn btn-success"
       (click)="doAdd()"
       [disabled]="!siteName || !maxDepth">
       Add
     </button>
-    <a class="btn btn-warning btn-sm"
+    <a class="btn btn-warning"
        routerLink="/list">Cancel</a>
 <!--
     <button class="btn btn-warning btn"
