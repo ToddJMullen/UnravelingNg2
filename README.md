@@ -12,3 +12,5 @@ Git commits were executed using both the VSC Source Control features & Linux CLI
 
 Chapter 2 (My02-01/) was done exclusively in Atom Win v1.20 and on Linux with v 1.17 (until today when I upgraded to v.1.20.1) I tried using the GitPlus plugin, but the key bindings are missing/conflicted and it required(es) too
 much use of the mouse preferred the command line only (on Linux or GitBash/Windows).
+
+Chapter 3 (My03-01/) I coded using Brackets v1.10 (& v1.11 that was released the night before I finished the chapter).  Brackets TS linting & code hinting was continually breaking.  I was really excited to try and familiarize myself with Brackets more & even took a 3hr introduction/overview course before starting the chapter, but found myself continually changing TypeScript support packages, wondering what was happening, refreshing or closing & restarting Brackets, and generally wanting to switch to something else.  v1.11 seems like it may have fixed some of the causes, but???  I will try some of Ch4 in it  though. =)
