@@ -3,7 +3,9 @@
         ".git(?!ignore)",
         "dist",
         "bower_components",
-        "node_modules"
+        "node_modules",
+         "/*/*/Exercise*",
+		"nbproject"
     ],
     "bb.beautify.languages": {
         "javascript": "ts"
