@@ -2,6 +2,7 @@
 import {Component}	from "@angular/core";
 import {Router, ActivatedRoute}	from "@angular/router";
 
+import {DiveSite}	from "./dive-site";
 import {SiteMgmtService}	from "./site-mgmt.service";
 
 @Component({
