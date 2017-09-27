@@ -6,7 +6,7 @@ import {DiveSite}	from "./dive-site";
 @Injectable()
 export class SiteMgmtService{
 
-    Paths = {
+    Paths = {//doesn't work when referenced in the view templates. =/
         LIST: "/list"
         ,ADD: "/add"
         ,EDIT: "/edit"
