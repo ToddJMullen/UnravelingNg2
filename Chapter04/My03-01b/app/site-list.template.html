@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-xs-12">
+      <a class="btn btn-primary"
+         routerLink="/add">Add Site</a>
+<!-- replaced with the router ^^^
+    <button class="btn btn-primary btn-lg"
+      (click)="add()">
+      Add new site
+    </button>
+-->
+  </div>
+</div>
+<h2>List of Dive Sites</h2>
+<div class="row" *ngFor="let site of siteAry; let e=even; let f=first; let l=last"
+        [ngClass]="{ evenRow: e }"
+        ywActionable="#6fe" (onAction)="edit(site.id)"
+        [class.topRow]="f"
+        [class.bottomRow]="l">
+    <div class="col-xs-8">
+        <h4>{{site.id}}: {{site.name}}, Max Dive: {{site.maxDepth}}&apos;</h4>
+    </div>
+    <div class="col-xs-4" style="margin-top: 5px;">
+        <div class="">
+            <a class="btn btn-warning"
+               [routerLink]="['/edit', site.id]">Edit</a>
+            <a class="btn btn-warning"
+               [routerLink]="['/delete', site.id]">Delete</a>
+<!-- replaced with routing ^^^
+          <button class="btn btn-warning btn-sm"
+            (click)="edit(site.id)">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm"
+            (click)="delete(site.id)">
+            Delete
+          </button>
+-->
+        </div>
+    </div>
+</div>

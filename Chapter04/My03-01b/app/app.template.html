@@ -1,0 +1,25 @@
+<div class="container-fluid">
+	<h1>Dive Site Maintenance</h1>
+    <router-outlet></router-outlet>
+<!-- all replaced by the routing
+	<div [ngSwitch]="currentView">
+		<site-list-view *ngSwitchDefault
+			(onAdd)="navigateTo( Views.ADD )"
+			(onEdit)="siteId=$event; navigateTo( Views.EDIT )"
+			(onDelete)="siteId=$event; navigateTo( Views.DELETE )">
+		</site-list-view>
+		<add-site-view *ngSwitchCase="Views.ADD"
+			(onClosed)="navigateTo( Views.LIST )"
+			(onCancel)="navigateTo( Views.LIST )">
+		</add-site-view>
+		<edit-site-view *ngSwitchCase="Views.EDIT"
+			[siteId]="siteId"
+			(onClosed)="navigateTo( Views.LIST )">
+		</edit-site-view>
+		<delete-site-view *ngSwitchCase="Views.DELETE"
+			[siteId]="siteId"
+			(onClosed)="navigateTo( Views.LIST )">
+		</delete-site-view>
+	</div>
+-->
+</div>
