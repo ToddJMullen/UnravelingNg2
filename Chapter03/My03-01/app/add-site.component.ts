@@ -1,4 +1,6 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+//import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component} from "@angular/core";
+import {Router,ActivatedRoute} from "@angular/router";
 
 import {SiteMgmtService}	from "./site-mgmt.service";
 
@@ -8,14 +10,17 @@ import {SiteMgmtService}	from "./site-mgmt.service";
 })
 export class AddSiteComponent {
 
-	@Output() onClosed = new EventEmitter();
+//	@Output() onClosed = new EventEmitter();
 
-	@Input() siteId: number;
+//	@Input() siteId: number;
 
 	siteName: string;
 	maxDepth: number;
 
-	constructor( private siteService:SiteMgmtService ){
+	constructor(
+        private siteService:SiteMgmtService
+        ,private router:Router
+    ){
 //		this.siteService is created automatically
 	}
 
@@ -23,7 +28,8 @@ export class AddSiteComponent {
 	doAdd() {
 		if (this.siteName) {
 			this.siteService.addSite( {id:0, name: this.siteName, maxDepth: this.maxDepth } );
-			this.onClosed.emit(null);
+            this.router.navigate( [this.siteService.Paths.LIST] );
+//			this.onClosed.emit(null);
 //			this.onAdded.emit(this.siteName);
 		}
 	}
@@ -31,6 +37,7 @@ export class AddSiteComponent {
 //	@Output() onCancel = new EventEmitter();
 	doCancel() {
 //		this.onCancel.emit(null);
-		this.onClosed.emit(null);
+//		this.onClosed.emit(null);
+        this.router.navigate( [this.siteService.Paths.LIST] );
 	}
 }
