@@ -36,8 +36,8 @@ export class DiveLogApi{
         return this.http.get( this.URI_DIVE_LOG_API )
                 .toPromise()
                 .then( rsp => {
-                    rsp.json();
                     console.log("DiveLogApi::getDives() got:", rsp );
+                    return rsp.json();
                 })
                 .catch( err => {
                     let errMsg = err.message ? err.message : err.status
