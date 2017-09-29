@@ -13,6 +13,10 @@ export class DiveLogApi{
 
     private URI_DIVE_LOG_API = "http://unraveling-ng.azurewebsites.net/api/backendtest/dives";
 
+    constructor( private http:Http ){
+        console.log("DiveLogApi(), http:", http );
+    }
+
 	//so far the only method will return the div logs
 	getDives():Promise<DiveLogEntry[]>{
 //		return DiveLogEntry.BaseDives;//old boredom stuff
@@ -29,6 +33,18 @@ export class DiveLogApi{
 //
 //			}, DiveLogApi.MS_DELAY_API );
 //		});
+        return this.http.get( this.URI_DIVE_LOG_API )
+                .toPromise()
+                .then( rsp => {
+                    rsp.json();
+                    console.log("DiveLogApi::getDives() got:", rsp );
+                })
+                .catch( err => {
+                    let errMsg = err.message ? err.message : err.status
+                                    ? `${err.statusText}` : "Server error";
+                    console.error("DiveLogApi::getDives() server error", err );
+                    return Promise.reject(errMsg);
+                });
 	}
 
 }//DiveLogApi
