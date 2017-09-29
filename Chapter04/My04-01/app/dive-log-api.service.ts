@@ -9,6 +9,12 @@ export class DiveLogApi{
 
 	//so far the only method will return the div logs
 	getDives(){
-		return DiveLogEntry.BaseDives;
+//		return DiveLogEntry.BaseDives;//old boredom stuff
+		return new Promise<DiveLogEntry[]>( (onResolve, onReject) => {
+			setTimeout( () => {
+				onResolve( DiveLogEntry.BaseDives );
+			}, DiveLogApi.MS_DELAY_API )
+		});
 	}
-}
+
+}//DiveLogApi
