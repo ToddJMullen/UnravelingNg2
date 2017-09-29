@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 
-import {ContentFilterPipe}	from "./content-filter-pipe";
+//import {ContentFilterPipe}	from "./content-filter-pipe";
 import {DiveLogEntry}		from "./dive-log-entry";
 import {DiveLogApi}			from "./dive-log-api.service";
 
@@ -24,9 +24,20 @@ export class DiveLogComponent{
 
 		this.loading = true;
 		this.diveAry = [];
-		setTimeout( () => {
-			this.diveAry = this.diveLogApi.getDives();
-		}, DiveLogApi.MS_DELAY_API );
+
+		this.diveLogApi
+			.getDives()//returns a Promise of DiveLogEntry[] now
+			.then( logAry => {
+			this.diveAry = logAry;
+			this.loading = false;
+		});
+
+
+//Original faux async response
+//the response will be a promise now & the fauz delay will be in the API class
+//		setTimeout( () => {
+//			this.diveAry = this.diveLogApi.getDives();
+//		}, DiveLogApi.MS_DELAY_API );
 
 //for reference/ memory/ understanding purposes
 //the arrow fn above is equivalent to the following "usual" ES5 implementation
@@ -35,7 +46,7 @@ export class DiveLogComponent{
 //			diveLogComponent.diveAry = diveLogComponent.diveLogApi.getDives()
 //		}, DiveLogApi.MS_DELAY_API );
 
-	}
+	}//refreshDives()
 
 
 
