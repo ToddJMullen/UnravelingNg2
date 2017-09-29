@@ -6,7 +6,7 @@ import {DiveLogApi}			from "./dive-log-api.service";
 
 @Component({
 	selector:"dive-log"
-	,templateUrl: "./dive-log.template.html"
+	,templateUrl: "./app/dive-log.template.html"
 })
 export class DiveLogComponent{
 
