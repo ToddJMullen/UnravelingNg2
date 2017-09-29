@@ -7,7 +7,7 @@ import { Input, Output, EventEmitter } from "@angular/core";
 export class ActionableDirective{
 
     constructor( private element:ElementRef ){
-        console.log("ActionableDirective()", element );
+//        console.log("ActionableDirective()", element );
     }
 
     @Input('ywActionable')
@@ -16,7 +16,7 @@ export class ActionableDirective{
     @Output() onAction = new EventEmitter();
     @HostListener("click")
     onClick(){
-        console.log("ActionableDirective::onClick()")
+//        console.log("ActionableDirective::onClick()")
         this.onAction.emit(null);
     }
 
@@ -34,7 +34,7 @@ export class ActionableDirective{
 
     setAppearance( color:string, cursor:string, degs ){
         let rotation:string = "rotate(" + degs + "degs)";
-        console.log("ActionableDirective::setAppearance()", color, cursor, rotation );
+//        console.log("ActionableDirective::setAppearance()", color, cursor, rotation );
         let style = this.element.nativeElement.style;
         style.backgroundColor = color;
         style.cursor = cursor;
