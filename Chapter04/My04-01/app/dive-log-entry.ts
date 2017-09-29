@@ -6,7 +6,7 @@ export class DiveLogEntry{
   time: number;
 
 //this *was* copy/pasted because typing this stuff isn't learning either! =b
-  static StockDives: DiveLogEntry[] = [
+  static BaseDives: DiveLogEntry[] = [
   {
     site: 'Abu Gotta Ramada',
     location: 'Hurghada, Egypt',
