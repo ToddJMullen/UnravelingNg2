@@ -29,13 +29,22 @@ export class DiveLogComponent{
 		this.diveLogApi
 			.getDives()//returns a Promise of DiveLogEntry[] now
 			//note - this uses the "traditional" 2 param success,error callback signature
+//			.then( logAry => {
+//					this.diveAry = logAry;
+//					this.loading = false;
+//				}, errMsg => {
+//					this.loading = false;
+//					this.errorMsg = errMsg;
+//			});
+			//I prefer the "method chaining" style though
 			.then( logAry => {
-					this.diveAry = logAry;
-					this.loading = false;
-				}, errMsg => {
-					this.loading = false;
-					this.errorMsg = errMsg;
-			});
+				this.loading = false;
+				this.diveAry = logAry;
+			})
+			.catch( errMsg => {
+				this.loading = false;
+				this.errorMsg = errMsg;
+		});
 
 
 //Original faux async response
