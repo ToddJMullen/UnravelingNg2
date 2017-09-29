@@ -16,7 +16,7 @@ export class DiveLogApi{
 			setTimeout( () => {
 
 				if( DiveLogApi.callsMade++ % DiveLogApi.CALLS_TO_FAIL == 0 ){
-					onReject(`${DiveLogApi.call} calls to this servive is too many! Go away!! 8b `);
+					onReject(`${DiveLogApi.callsMade} calls to this servive is too many! Go away!! 8b`);
 				} else {
 					onResolve( DiveLogEntry.BaseDives );
 				}
