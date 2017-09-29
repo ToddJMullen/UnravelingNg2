@@ -7,6 +7,9 @@ import {DiveLogApi}			from "./dive-log-api.service";
 @Component({
 	selector:"dive-log"
 	,templateUrl: "./app/dive-log.template.html"
+	,styles: [`
+.alert{margin: 20px; text-align:center; font-size: 27px;}
+`]
 })
 export class DiveLogComponent{
 
@@ -40,6 +43,7 @@ export class DiveLogComponent{
 			.then( logAry => {
 				this.loading = false;
 				this.diveAry = logAry;
+				this.errorMsg = null;
 			})
 			.catch( errMsg => {
 				this.loading = false;

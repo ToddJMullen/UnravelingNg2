@@ -15,9 +15,12 @@
         (keyup)="0" />
     </div>
   </div>
+   <div [hidden]="!errorMsg" class="col-xs-12 alert alert-danger margin-all">
+   		{{errorMsg}}
+   </div>
   <div class="row">
     <div class="col-sm-4"
-      *ngFor="let dive of dives | contentFilter:searchBox.value">
+      *ngFor="let dive of diveAry | contentFilter:searchBox.value">
       <h3>{{dive.site}}</h3>
       <h4>{{dive.location}}</h4>
       <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
