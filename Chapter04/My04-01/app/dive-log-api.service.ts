@@ -6,14 +6,22 @@ import {DiveLogEntry} from "./dive-log-entry";
 export class DiveLogApi{
 
 	static MS_DELAY_API:number = 1000;
+	static CALLS_TO_FAIL:number = 3;
+	static callsMade:number = 0;
 
 	//so far the only method will return the div logs
-	getDives(){
+	getDives():Promise<DiveLogEntry[]>{
 //		return DiveLogEntry.BaseDives;//old boredom stuff
 		return new Promise<DiveLogEntry[]>( (onResolve, onReject) => {
 			setTimeout( () => {
-				onResolve( DiveLogEntry.BaseDives );
-			}, DiveLogApi.MS_DELAY_API )
+
+				if( DiveLogApi.callsMade++ % DiveLogApi.CALLS_TO_FAIL == 0 ){
+					onReject(`${DiveLogApi.call} calls to this servive is too many! Go away!! 8b `);
+				} else {
+					onResolve( DiveLogEntry.BaseDives );
+				}
+
+			}, DiveLogApi.MS_DELAY_API );
 		});
 	}
 
