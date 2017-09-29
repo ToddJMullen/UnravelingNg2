@@ -10,7 +10,6 @@ import {DiveLogApi}			from "./dive-log-api.service";
 })
 export class DiveLogComponent{
 
-	MS_DELAY_API:number = 1000;
 
 	loading:boolean = false;
 	diveAry:DiveLogEntry[];
@@ -27,14 +26,14 @@ export class DiveLogComponent{
 		this.diveAry = [];
 		setTimeout( () => {
 			this.diveAry = this.diveLogApi.getDives();
-		}, this.MS_DELAY_API );
+		}, DiveLogApi.MS_DELAY_API );
 
 //for reference/ memory/ understanding purposes
 //the arrow fn above is equivalent to the following "usual" ES5 implementation
 //		var diveLogComponent = this;
 //		setTimeout( function(){
 //			diveLogComponent.diveAry = diveLogComponent.diveLogApi.getDives()
-//		}, this.MS_DELAY_API );
+//		}, DiveLogApi.MS_DELAY_API );
 
 	}
 
