@@ -13,6 +13,7 @@ export class DiveLogComponent{
 
 	loading:boolean = false;
 	diveAry:DiveLogEntry[];
+	errorMsg:string;
 
 	constructor( private diveLogApi:DiveLogApi ){
 		console.log("DiveLogComponent()");
@@ -30,6 +31,9 @@ export class DiveLogComponent{
 			.then( logAry => {
 			this.diveAry = logAry;
 			this.loading = false;
+		}, errMsg => {
+			this.loading = false;
+			this.errorMsg = errMsg;
 		});
 
 
