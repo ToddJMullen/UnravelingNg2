@@ -20,7 +20,8 @@
    </div>
   <div class="row">
     <div class="col-sm-4"
-      *ngFor="let dive of diveAry | contentFilter:searchBox.value">
+      *ngFor="let dive of diveAry">
+<!--         | contentFilter:searchBox.value <-- breaks the app because it's not defined yet -->
       <h3>{{dive.site}}</h3>
       <h4>{{dive.location}}</h4>
       <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
