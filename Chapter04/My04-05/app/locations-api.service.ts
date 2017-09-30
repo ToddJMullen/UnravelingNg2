@@ -7,7 +7,7 @@ import {ApiInfo}	from "./api-info";
 import {Location}	from "./location";
 
 @Injectable()
-export class LocationApiService{
+export class LocationsApiService{
 
 
 	private locationAry:Location[] = [];
@@ -92,7 +92,7 @@ export class LocationApiService{
 
 
 
-}//LocationApiService
+}//LocationsApiService
 
 
 
