@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http, Headers, Request, RequestMethod, RequestOptions}	from "@angular/http";
 import "rxjs/add/operator/toPromise";
 
-import {ApiInfo}	from "./api-info";
+import {ApiInfo}	from "./api-auth-info";
 
 import {Location}	from "./location";
 
