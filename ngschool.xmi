@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_LyneUKfiEeeF29RxWUqLsQ" name="ngschool">
+  <eAnnotations xmi:id="_LyneUafiEeeF29RxWUqLsQ" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="_LyneUqfiEeeF29RxWUqLsQ" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_LyneU6fiEeeF29RxWUqLsQ" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LyneVKfiEeeF29RxWUqLsQ" name="Angular Application">
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneVafiEeeF29RxWUqLsQ" name="Components">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneVqfiEeeF29RxWUqLsQ" name="AppComponent" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneV6fiEeeF29RxWUqLsQ" name="CustomComponent1" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneWKfiEeeF29RxWUqLsQ" name="CustomComponent2" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneWafiEeeF29RxWUqLsQ" name="Directives">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneWqfiEeeF29RxWUqLsQ" name="Structural" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneW6fiEeeF29RxWUqLsQ" name="Attribute" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneXKfiEeeF29RxWUqLsQ" name="Pipes"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneXafiEeeF29RxWUqLsQ" name="Modules">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneXqfiEeeF29RxWUqLsQ" name="NgModule" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneX6fiEeeF29RxWUqLsQ" name="BrowserModule" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneYKfiEeeF29RxWUqLsQ" name="FormsModule" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneYafiEeeF29RxWUqLsQ" name="HttpModule" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneYqfiEeeF29RxWUqLsQ" name="RouterModule" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneY6fiEeeF29RxWUqLsQ" name="Services">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneZKfiEeeF29RxWUqLsQ" name="Http" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneZafiEeeF29RxWUqLsQ" name="Bindings">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneZqfiEeeF29RxWUqLsQ" name="{{Template Expr}}" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneZ6fiEeeF29RxWUqLsQ" name="[Property]" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneaKfiEeeF29RxWUqLsQ" name="(Event)" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LyneaafiEeeF29RxWUqLsQ" name="[(Two Way)]" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LyneaqfiEeeF29RxWUqLsQ" name="Routing">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Lynea6fiEeeF29RxWUqLsQ" name="&lt;base href=&quot;/&quot;>" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LynebKfiEeeF29RxWUqLsQ" name="RouterModule" isAbstract="true"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LynebafiEeeF29RxWUqLsQ" name="Routes" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LynebqfiEeeF29RxWUqLsQ" name="Observables"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_Lyneb6fiEeeF29RxWUqLsQ" name="RxJS"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LynecKfiEeeF29RxWUqLsQ" name="NgBucks">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_LynecafiEeeF29RxWUqLsQ" name="Customer"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LynecqfiEeeF29RxWUqLsQ" memberEnd="_Lynec6fiEeeF29RxWUqLsQ _LynedafiEeeF29RxWUqLsQ" navigableOwnedEnd="_Lynec6fiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_Lynec6fiEeeF29RxWUqLsQ" visibility="public" type="_LynegafiEeeF29RxWUqLsQ" association="_LynecqfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LynedKfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LynedafiEeeF29RxWUqLsQ" visibility="public" type="_LynecafiEeeF29RxWUqLsQ" association="_LynecqfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LynedqfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Lyned6fiEeeF29RxWUqLsQ" memberEnd="_LyneeKfiEeeF29RxWUqLsQ _LyneeqfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyneeKfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyneeKfiEeeF29RxWUqLsQ" visibility="public" type="_LyneiKfiEeeF29RxWUqLsQ" association="_Lyned6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyneeafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyneeqfiEeeF29RxWUqLsQ" visibility="public" type="_LynecafiEeeF29RxWUqLsQ" association="_Lyned6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lynee6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LynefKfiEeeF29RxWUqLsQ" memberEnd="_LynefafiEeeF29RxWUqLsQ _Lynef6fiEeeF29RxWUqLsQ" navigableOwnedEnd="_LynefafiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LynefafiEeeF29RxWUqLsQ" visibility="public" type="_Lynej6fiEeeF29RxWUqLsQ" association="_LynefKfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LynefqfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_Lynef6fiEeeF29RxWUqLsQ" visibility="public" type="_LynecafiEeeF29RxWUqLsQ" association="_LynefKfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LynegKfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LynegafiEeeF29RxWUqLsQ" name="Order Drink">
+      <ownedComment xmi:id="_LynegqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Lyneg6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynehKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynehafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynehqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Lyneh6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyneiKfiEeeF29RxWUqLsQ" name="Order Food">
+      <ownedComment xmi:id="_LyneiafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyneiqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Lynei6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynejKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynejafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynejqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Lynej6fiEeeF29RxWUqLsQ" name="Pay Bill">
+      <ownedComment xmi:id="_LynekKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynekafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynekqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Lynek6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynelKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LynelafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_LynelqfiEeeF29RxWUqLsQ" name="Barista"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Lynel6fiEeeF29RxWUqLsQ" memberEnd="_LynemKfiEeeF29RxWUqLsQ _LynemqfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LynemKfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LynemKfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFaqfiEeeF29RxWUqLsQ" association="_Lynel6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LynemafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LynemqfiEeeF29RxWUqLsQ" visibility="public" type="_LynelqfiEeeF29RxWUqLsQ" association="_Lynel6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lynem6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFYKfiEeeF29RxWUqLsQ" memberEnd="_LyoFYafiEeeF29RxWUqLsQ _LyoFY6fiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFYafiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFYafiEeeF29RxWUqLsQ" visibility="public" type="_LyoFcafiEeeF29RxWUqLsQ" association="_LyoFYKfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFYqfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFY6fiEeeF29RxWUqLsQ" visibility="public" type="_LynelqfiEeeF29RxWUqLsQ" association="_LyoFYKfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFZKfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFZafiEeeF29RxWUqLsQ" memberEnd="_LyoFZqfiEeeF29RxWUqLsQ _LyoFaKfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFZqfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFZqfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFeKfiEeeF29RxWUqLsQ" association="_LyoFZafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFZ6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFaKfiEeeF29RxWUqLsQ" visibility="public" type="_LynelqfiEeeF29RxWUqLsQ" association="_LyoFZafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFaafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFaqfiEeeF29RxWUqLsQ" name="Make Drink">
+      <ownedComment xmi:id="_LyoFa6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFbKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFbafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFbqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFb6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFcKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFcafiEeeF29RxWUqLsQ" name="Make Food">
+      <ownedComment xmi:id="_LyoFcqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFc6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFdKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFdafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFdqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFd6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFeKfiEeeF29RxWUqLsQ" name="Ringup Charges">
+      <ownedComment xmi:id="_LyoFeafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFeqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFe6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFfKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFfafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFfqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LyoFf6fiEeeF29RxWUqLsQ" name="NgWar">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_LyoFgKfiEeeF29RxWUqLsQ" name="Player 1"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFgafiEeeF29RxWUqLsQ" memberEnd="_LyoFgqfiEeeF29RxWUqLsQ _LyoFhKfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFgqfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFgqfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFnqfiEeeF29RxWUqLsQ" association="_LyoFgafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFg6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFhKfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFgKfiEeeF29RxWUqLsQ" association="_LyoFgafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFhafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_LyoFhqfiEeeF29RxWUqLsQ" name="Player 2"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFh6fiEeeF29RxWUqLsQ" memberEnd="_LyoFiKfiEeeF29RxWUqLsQ _LyoFiqfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFiKfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFiKfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFnqfiEeeF29RxWUqLsQ" association="_LyoFh6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFiafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFiqfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFhqfiEeeF29RxWUqLsQ" association="_LyoFh6fiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFi6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_LyoFjKfiEeeF29RxWUqLsQ" name="Dealer"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFjafiEeeF29RxWUqLsQ" memberEnd="_LyoFjqfiEeeF29RxWUqLsQ _LyoFkKfiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFjqfiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFjqfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFl6fiEeeF29RxWUqLsQ" association="_LyoFjafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFj6fiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFkKfiEeeF29RxWUqLsQ" visibility="public" type="_LyoFjKfiEeeF29RxWUqLsQ" association="_LyoFjafiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFkafiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_LyoFkqfiEeeF29RxWUqLsQ" memberEnd="_LyoFk6fiEeeF29RxWUqLsQ _LyoFlafiEeeF29RxWUqLsQ" navigableOwnedEnd="_LyoFk6fiEeeF29RxWUqLsQ">
+      <ownedEnd xmi:id="_LyoFk6fiEeeF29RxWUqLsQ" visibility="public" type="_LyoFpqfiEeeF29RxWUqLsQ" association="_LyoFkqfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFlKfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_LyoFlafiEeeF29RxWUqLsQ" visibility="public" type="_LyoFjKfiEeeF29RxWUqLsQ" association="_LyoFkqfiEeeF29RxWUqLsQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LyoFlqfiEeeF29RxWUqLsQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFl6fiEeeF29RxWUqLsQ" name="Deal Cards">
+      <ownedComment xmi:id="_LyoFmKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFmafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFmqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFm6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFnKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFnafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFnqfiEeeF29RxWUqLsQ" name="Draw/Throw Card">
+      <ownedComment xmi:id="_LyoFn6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFoKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFoafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFoqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFo6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFpKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <extend xmi:id="_LyoFpafiEeeF29RxWUqLsQ" name="UseCaseDependency" extendedCase="_LyoFpqfiEeeF29RxWUqLsQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LyoFpqfiEeeF29RxWUqLsQ" name="Judge Round">
+      <ownedComment xmi:id="_LyoFp6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFqKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFqafiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFqqfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFq6fiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+      <ownedComment xmi:id="_LyoFrKfiEeeF29RxWUqLsQ">
+        <body>...</body>
+      </ownedComment>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
