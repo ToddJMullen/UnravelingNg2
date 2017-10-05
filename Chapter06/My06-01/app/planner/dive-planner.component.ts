@@ -9,6 +9,7 @@ import {HighlightDirective} from "../thirdparty/acme/highlight.directive";
 <div class="col-xs-6"
     acme-highlight="#3a3" acme-cursor="help" >
  <h3>Dive Planner</h3>
+<p>Has the HighlightDirective applied &amp; imported</p>
 </div>
 `
     ,styles: [`
