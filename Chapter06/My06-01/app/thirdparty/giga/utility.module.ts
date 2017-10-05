@@ -8,4 +8,4 @@ import {BorderDirective} from "./border.directive";
   ,declarations: [BorderDirective]//what it has
   ,exports: [BorderDirective]//what it shares
 })
-export class AcmeModule{}
+export class UtilityModule{}
