@@ -1,0 +1,9 @@
+<div class="col-xs-12">
+    <h1>Diving Gear Checklist</h1>
+    <div class="row">
+        <is-item *ngFor="let item of itemAry"
+              [name]="item" [owner]="'Me'" >
+        </is-item>
+        <pre>{{inventory.getItems() | json}}</pre>
+    </div>
+</div>

@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {PlannerModule} from './planner/planner.module';//"phyysical" import
 import {LogBookModule} from "./logbook/log-book.module";
 import {BuddyModule} from "./buddies/buddy.module";
+import {InventoryModule} from "./di-inventory/inventory.module"
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import {BuddyModule} from "./buddies/buddy.module";
     ,PlannerModule//logical import, imports all the exported classes of PlannerModule into the AppModule scope
     ,BuddyModule
     ,LogBookModule
+    ,InventoryModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

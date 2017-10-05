@@ -9,7 +9,7 @@ import {BorderDirective} from "../thirdparty/giga/border.directive";
 <div class="col-xs-6"
  giga-border="outset" giga-border-px="2" giga-border-color="silver">
 <h3>Log Book</h3>
-<p>Has Giga BorderDirective applied & imported, but doesn't reset on mouseleave</p>
+<p>Has Giga BorderDirective applied &amp; imported.</p>
 </div>
 `
   ,styles: [`

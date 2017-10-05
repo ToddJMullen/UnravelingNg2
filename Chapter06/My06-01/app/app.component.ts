@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
       <yw-planner></yw-planner><!-- <= imported from the planner module/component -->
       <log-book></log-book>
       <buddy-comp></buddy-comp>
+        <inventory></inventory>
     </div>
   `
 })
