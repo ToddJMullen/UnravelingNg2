@@ -38,9 +38,15 @@ export class BorderDirective{
     applyStyle( type, color, px ){
         console.log("BorderDirective::applyStyle()", type, color, px );
         let style = this.elem.nativeElement.style;
-        style.borderColor = this.color;
-        style.borderWidth = this.px + "px";
-        style.borderStyle = this.type;
+        if( type && color && px ){
+            style.border = px + "px " + type + " " + color;
+        } else {
+            style.border = null;
+        }
+
+//        style.borderColor = this.color;
+//        style.borderWidth = this.px + "px";
+//        style.borderStyle = this.type;
     }
 
 
