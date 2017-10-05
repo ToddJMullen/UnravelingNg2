@@ -28,6 +28,10 @@ export class BorderDirective{
     @HostListener("mouseleave")
     onMouseLeave(){
         this.applyStyle( null, null, null );
+//        let style = this.elem.nativeElement.style;
+//        delete style.borderColor;
+//        delete style.borderWidth;
+//        delete style.borderStyle;
     }
 
 
