@@ -1,0 +1,12 @@
+<div class="col-xs-12" 
+    acme-highlight="#f77" acme-cursor="search"
+    giga-border="outset" giga-border-px="2" giga-border-color="#f70">
+    <h2>Inventory Component</h2>
+    <div class="row">
+        <dive-item *ngFor="let item of itemAry"
+              [name]="item" [owner]="'Me'" >
+        </dive-item>
+        <pre>{{inventory.getItems() | json}}</pre>
+    </div>
+    (end inventory template)
+</div>

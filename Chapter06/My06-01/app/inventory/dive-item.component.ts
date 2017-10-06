@@ -3,11 +3,11 @@ import {Component} from "@angular/core";
 import {InventoryService} from "./inventory.service";
 
 @Component({
-    selector: "is-item"
-    ,templateUrl: "./item.template.html"
+    selector: "dive-item"
+    ,templateUrl: "app/inventory/dive-item.template.html"
     ,inputs: ["name", "owner"]
 })
-export class ItemComponent{
+export class DiveItemComponent{
 
     name:string;
     owner:string;

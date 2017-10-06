@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {PlannerModule} from './planner/planner.module';//"phyysical" import
 import {LogBookModule} from "./logbook/log-book.module";
 import {BuddyModule} from "./buddies/buddy.module";
-import {InventoryModule} from "./di-inventory/inventory.module"
+import {InventoryModule} from "./inventory/inventory.module";
 
 @NgModule({
   imports: [
