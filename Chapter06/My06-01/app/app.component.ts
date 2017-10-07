@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {DiverComponent} from "./diver.component";
+//import {DiverComponent} from "./diver/diver.component";
 
 @Component({
   selector: 'yw-app'
@@ -11,10 +11,12 @@ import {DiverComponent} from "./diver.component";
         <log-book></log-book>
         <buddy-comp></buddy-comp>
         <inventory></inventory>
+
         <diver *ngFor="let diver of diverAry"
                 [name]="diver"
                 [itemAry]="itemAry">
         </diver>
+
     </div>
   `
 })
@@ -24,3 +26,5 @@ export class AppComponent {
     itemAry = ["Shark Sandwiches","Shark Juice","Banana","Knife"];
 
 }
+
+

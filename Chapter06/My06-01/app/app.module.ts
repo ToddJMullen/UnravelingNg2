@@ -6,7 +6,8 @@ import {PlannerModule} from './planner/planner.module';//"phyysical" import
 import {LogBookModule} from "./logbook/log-book.module";
 import {BuddyModule} from "./buddies/buddy.module";
 import {InventoryModule} from "./inventory/inventory.module";
-import {DiverComponent} from "./diver.component";
+//import {DiverComponent} from "./diver.component";//<= unexpected, maybe can only import modules (like immport like)???
+import {DiverModule} from "./diver/diver.module";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {DiverComponent} from "./diver.component";
     ,BuddyModule
     ,LogBookModule
     ,InventoryModule
-//    ,DiverComponent
+//    ,DiverComponent//<= no worky here
+    ,DiverModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

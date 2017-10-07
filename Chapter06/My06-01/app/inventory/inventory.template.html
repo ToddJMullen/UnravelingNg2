@@ -6,7 +6,7 @@
         <dive-item *ngFor="let item of itemAry"
               [name]="item" [owner]="'Me'" >
         </dive-item>
-        <pre>{{inventory.getItems() | json}}</pre>
+        <label>(InventoryService Contents)</label>
+        <p>{{inventory.getItems() | json}}</p>
     </div>
-    (end inventory template)
 </div>

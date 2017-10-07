@@ -9,7 +9,7 @@ import {BorderDirective} from "../thirdparty/giga/border.directive";
 @Component({
     selector: "inventory"
     ,templateUrl: "app/inventory/inventory.template.html"
-    ,inputs: ['itemAry']
+//    ,inputs: ['itemAry']
     ,styles: [`
 .col-xs-12{
   background-color:#aea;

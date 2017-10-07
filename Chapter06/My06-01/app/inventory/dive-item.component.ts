@@ -4,8 +4,8 @@ import {InventoryService} from "./inventory.service";
 
 @Component({
     selector: "dive-item"
-    ,templateUrl: "app/inventory/dive-item.template.html"
     ,inputs: ["name", "owner"]
+    ,templateUrl: "app/inventory/dive-item.template.html"
 })
 export class DiveItemComponent{
 
