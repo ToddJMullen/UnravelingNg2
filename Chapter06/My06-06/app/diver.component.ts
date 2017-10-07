@@ -2,15 +2,17 @@ import {Component} from '@angular/core';
 import {InventoryService} from './inventory.service';
 
 @Component({
-  selector: 'diver',
-  template: `
+  selector: 'diver'
+  ,providers: [InventoryService]
+  ,template: `
     <div class="col-sm-3">
-      <h2>{{name}}</h2>
+      <h4>{{name}}</h4>
       <gear-item *ngFor="let item of items"
         [name]="item"
         [owner]="name">
       </gear-item>
-      <pre>{{inventory.getItems() | json}}</pre>
+      <br />
+      <code>{{inventory.getItems() | json}}</code>
     </div>
   `,
   inputs: ['name', 'items']
