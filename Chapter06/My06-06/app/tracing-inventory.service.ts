@@ -3,7 +3,11 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class InventoryService{
   
-  private  _items: {[key:string]: string};
+  private  _items: {[key:string]: string} = {};
+
+  getItems(){
+      return this._items;
+  }
   
   getItem( key ){
     return this._items[key];
@@ -29,7 +33,12 @@ export class InventoryService{
 export class TracingInventoryService{
   //define an alternative implementation under a different name
   
-  private  _items: {[key:string]: string};
+  private  _items: {[key:string]: string} = {};
+
+  getItems(){
+      console.log("TracingInventoryService::getItems(), returning:", this._items );
+      return this._items;
+  }
   
   getItem( key ){
     console.log("TracingInventoryService::getItem()", key );
@@ -49,9 +58,9 @@ export class TracingInventoryService{
       return;
     }
     console.log("TracingInventoryService::toggleItem(), setting:", key, owner);
-    this._items[key] = key;
+    this._items[key] = owner;
   }
   
   
   
-}
+}//TracingInventoryService
