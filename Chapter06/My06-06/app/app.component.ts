@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   selector: 'yw-app',
   template: `
     <div class="container-fluid">
-      <h1>Diving Gear Checklist</h1>
+      <h3>Diving Gear Checklist</h3>
       <div class="row">
         <diver *ngFor="let diver of divers"
           [name]="diver"
@@ -13,6 +13,9 @@ import {Component} from '@angular/core';
       </div>
     </div>
   `
+  ,styles: [`
+h1,.row{font-size:14px;}
+`]
 })
 export class AppComponent {
   divers = ['Joe', 'Cecile', 'Martha', 'Steve']
