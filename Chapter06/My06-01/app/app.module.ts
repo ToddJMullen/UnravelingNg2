@@ -6,6 +6,7 @@ import {PlannerModule} from './planner/planner.module';//"phyysical" import
 import {LogBookModule} from "./logbook/log-book.module";
 import {BuddyModule} from "./buddies/buddy.module";
 import {InventoryModule} from "./inventory/inventory.module";
+import {DiverComponent} from "./diver.component";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {InventoryModule} from "./inventory/inventory.module";
     ,BuddyModule
     ,LogBookModule
     ,InventoryModule
+//    ,DiverComponent
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
