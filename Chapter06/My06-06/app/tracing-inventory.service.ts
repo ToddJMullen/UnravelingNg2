@@ -54,7 +54,7 @@ export class TracingInventoryService implements IInventory{
   
   hasItem(key: string): boolean {
       let bool = !!this._items[key];
-    console.log("TracingInventoryService::hasItem()", key );
+    console.log("TracingInventoryService::hasItem()\n", key, " => ", bool );
     return bool;
   }
   
