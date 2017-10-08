@@ -1,11 +1,6 @@
 import {Injectable} from "@angular/core";
 
-export interface IInventory{
-    getItems():void;
-    hasItem(key:string):boolean;
-    toggleItem(key:string, owner:string):void;
-}
-
+import {IInventory} from "./iinventory.iface";
 
 @Injectable()
 export class InventoryService implements IInventory {
