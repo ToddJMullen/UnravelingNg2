@@ -36,7 +36,7 @@ export class TracingInventoryService{
   private  _items: {[key:string]: string} = {};
 
   getItems(){
-      console.log("TracingInventoryService::getItems(), returning:", this._items );
+    //   console.log("TracingInventoryService::getItems(), returning:", this._items );
       return this._items;
   }
   
@@ -45,19 +45,20 @@ export class TracingInventoryService{
     return this._items[key];
   }
   
-  hasItem( key ){
+  hasItem(key: string): boolean {
+      let bool = !!this._items[key];
     console.log("TracingInventoryService::hasItem()", key );
-    return !!this._items[key];
+    return bool;
   }
   
   toggleItem( key:string, owner:string ){
-    console.log("TracingInventoryService::toggleItem()", key, owner );
+    // console.log("TracingInventoryService::toggleItem()", key, owner );
     if( this._items[key] ){
       console.log("TracingInventoryService::toggleItem(), deleting: ", key, owner);
       delete this._items[key];
       return;
     }
-    console.log("TracingInventoryService::toggleItem(), setting:", key, owner);
+    console.log("TracingInventoryService::toggleItem(),\nsetting:", key, " => ", owner);
     this._items[key] = owner;
   }
   

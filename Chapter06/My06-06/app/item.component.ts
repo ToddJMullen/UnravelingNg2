@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {InventoryService} from './inventory.service';
+// import {InventoryService} from './inventory.service';
+import {InventoryService} from "./tracing-inventory.service";
 
 @Component({
   selector: 'gear-item',
@@ -23,7 +24,8 @@ export class ItemComponent {
   }
 
   toggle() {
-    this.inventory.toggle(this.name, this.owner);
+    this.inventory.toggleItem(this.name, this.owner);
     this.selected = this.inventory.hasItem(this.name);
+    console.log("ItemComponent::toggle(),\nname: ", this.name, ", Is selected? ", this.selected );
   }
 }

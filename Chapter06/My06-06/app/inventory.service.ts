@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class InventoryService {
+export class UnventoryService {
   private _items: { [key: string]: string } = {};
 
   getItems() {
@@ -12,7 +12,7 @@ export class InventoryService {
     return !!this._items[key]
   }
 
-  toggle(key: string, owner: string) {
+  toggleItem(key: string, owner: string) {
     if (this._items[key]) {
       delete this._items[key];
     }

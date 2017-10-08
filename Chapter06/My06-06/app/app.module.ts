@@ -4,7 +4,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {ItemComponent} from './item.component';
 import {DiverComponent} from './diver.component';
-import {InventoryService} from './inventory.service';
+// import {InventoryService} from './inventory.service';
+import {InventoryService} from "./tracing-inventory.service"
 
 @NgModule({
   imports: [BrowserModule],
@@ -13,7 +14,7 @@ import {InventoryService} from './inventory.service';
     ItemComponent,
     DiverComponent
   ]
-  ,providers: [InventoryService],
-  bootstrap: [AppComponent]
+  ,providers: [InventoryService]
+  ,bootstrap: [AppComponent]
 })
 export class AppModule { }

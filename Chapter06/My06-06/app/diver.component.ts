@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+
+// import {InventoryService} from "./inventory.service";
 import {InventoryService, TracingInventoryService} from './tracing-inventory.service';
 
 @Component({
