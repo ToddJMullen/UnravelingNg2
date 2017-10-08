@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {IInventory} from "./tracing-inventory.service";
+// import {IInventory} from "./tracing-inventory.service";
 import {InventoryService} from './tracing-inventory.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class ItemComponent {
   owner: string;
   selected = false;
   
-  constructor(private inventory: IInventory) {
+  constructor(private inventory: InventoryService) {
   }
 
   toggle() {
