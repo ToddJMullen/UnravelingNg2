@@ -1,13 +1,14 @@
 import {Component} from '@angular/core';
 
 // import {InventoryService} from "./inventory.service";
+import {IInventory} from "./tracing-inventory.service";
 import {InventoryService, TracingInventoryService} from './tracing-inventory.service';
 
 @Component({
   selector: 'diver'
   ,providers: [
 //    InventoryService
-    {provide: InventoryService
+    {provide: IInventory
     ,useClass:TracingInventoryService}
   ]
   ,template: `
@@ -28,6 +29,6 @@ export class DiverComponent {
   name: string;
   items: string[];
 
-  constructor(private inventory: InventoryService) {
+  constructor(private inventory: IInventory) {
   }
 }

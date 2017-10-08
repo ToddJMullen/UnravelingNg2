@@ -1,7 +1,14 @@
 import {Injectable} from "@angular/core";
 
+export interface IInventory{
+    getItems():void;
+    hasItem(key:string):boolean;
+    toggleItem(key:string, owner:string):void;
+}
+
+
 @Injectable()
-export class InventoryService{
+export class InventoryService implements IInventory {
   
   private  _items: {[key:string]: string} = {};
 
@@ -30,7 +37,7 @@ export class InventoryService{
 
 
 @Injectable()
-export class TracingInventoryService{
+export class TracingInventoryService implements IInventory{
   //define an alternative implementation under a different name
   
   private  _items: {[key:string]: string} = {};

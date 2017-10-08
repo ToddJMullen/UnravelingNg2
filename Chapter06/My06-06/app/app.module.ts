@@ -14,7 +14,7 @@ import {InventoryService} from "./tracing-inventory.service"
     ItemComponent,
     DiverComponent
   ]
-  ,providers: [InventoryService]
+//   ,providers: [InventoryService]
   ,bootstrap: [AppComponent]
 })
 export class AppModule { }

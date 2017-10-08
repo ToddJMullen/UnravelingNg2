@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-// import {InventoryService} from './inventory.service';
-import {InventoryService} from "./tracing-inventory.service";
+
+import {IInventory} from "./tracing-inventory.service";
+import {InventoryService} from './tracing-inventory.service';
 
 @Component({
   selector: 'gear-item',
@@ -20,7 +21,7 @@ export class ItemComponent {
   owner: string;
   selected = false;
   
-  constructor(private inventory: InventoryService) {
+  constructor(private inventory: IInventory) {
   }
 
   toggle() {
