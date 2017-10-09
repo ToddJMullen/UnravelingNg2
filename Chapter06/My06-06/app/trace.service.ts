@@ -20,8 +20,11 @@ export class AdvancedTraceService{
 		this.instance = ++AdvancedTraceService.counter;
 	}
 
-	trace(msg:string){
-		console.log(``)
+	trace(msg:string, src){
+		if( src ){
+			msg = `${src.constructor.name}: ${msg}`;
+		}
+		console.log(`Tracer ${this.instance} received:\n${msg}`);
 	}
 
 }
