@@ -1,4 +1,6 @@
-import {Injectable} from "@angular/core";
+import {Injectable, Inject} from "@angular/core";
+
+import {OPAQUE_VERSION} from"./opaque-version.token"
 
 @Injectable()
 export class TraceService{
@@ -17,7 +19,9 @@ export class AdvancedTraceService{
 	instance: number;
     info:string;
 
-	constructor(){
+	constructor(
+        @Inject(OPAQUE_VERSION) private version:string
+    ){
 		this.instance = ++AdvancedTraceService.counter;
 	}
 
