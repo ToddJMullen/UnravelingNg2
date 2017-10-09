@@ -27,6 +27,6 @@ export class ItemComponent {
   toggle() {
     this.inventory.toggleItem(this.name, this.owner);
     this.selected = this.inventory.hasItem(this.name);
-    console.log("ItemComponent::toggle(),\nname: ", this.name, ", Is selected? ", this.selected );
+//    console.log("ItemComponent::toggle(),\nname: ", this.name, ", Is selected? ", this.selected );
   }
 }

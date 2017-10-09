@@ -12,7 +12,7 @@ export class InventoryPlusTracingService implements IInventory{
 	constructor(
 		@Optional() private tracer:TraceService
 	){
-		console.log("InventoryPlusTracingService()");
+//		console.log("InventoryPlusTracingService()");
 		if( this.tracer ){
 			tracer.trace("construct()", this );
 		}
