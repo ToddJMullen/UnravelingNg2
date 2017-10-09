@@ -25,7 +25,7 @@ export class AdvancedTraceService{
 		if( src ){
 			msg = `${src.constructor.name}::${msg}`;
 		}
-		console.log(`Tracer ${this.instance}\n${this.info}\nReceived:\n${msg}`);
+		console.log(`Tracer ${this.instance}, Info: ${this.info}\nReceived: ${msg}`);
 	}
 
 }
