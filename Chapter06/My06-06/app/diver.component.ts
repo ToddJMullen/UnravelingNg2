@@ -5,6 +5,11 @@ import {Component} from '@angular/core';
 //import {InventoryService, TracingInventoryService} from './tracing-inventory.service';
 import {InventoryService} from './tracing-inventory.service';
 import {InventoryPlusTracingService} from "./inventory-plus-tracing.service";
+import {AdvancedTraceService} from "./trace.service";
+
+let baseInventory = ["Shark sandwiches","Tofu","Flash Grenades","Baby Powder"]
+,instructor = "Julio";
+
 
 @Component({
   selector: 'diver'
@@ -15,7 +20,9 @@ import {InventoryPlusTracingService} from "./inventory-plus-tracing.service";
 //	  ,InventoryPlusTracingService//Provide one inventory for each diver
 	  //I don't want to use that long name, so I'll alias it
 	  ,{provide: InventoryService
-	  	,useClass: InventoryPlusTracingService
+//	  	,useClass: InventoryPlusTracingService//we'll switch to a factory to get our instance
+        ,useFactory: inventoryFactory( baseInventory, instructor )
+        ,deps: [AdvancedTraceService]//make sure the factory has it's dependencies
 	  }
   ]
   ,template: `
@@ -39,3 +46,13 @@ export class DiverComponent {
   }
 }
 // (click)="inventory.toggleItem( item, name )"
+
+function inventoryFactory( init:string[], owner:string ){
+    return (tracer:AdvancedTraceService) => {
+        var invSrv = new InventoryPlusTracingService( tracer );
+        for( let i = 0; i < init.length; i++ ){
+            invSrv.toggleItem( init[i], owner );
+        }
+        return invSrv;
+    }
+}
