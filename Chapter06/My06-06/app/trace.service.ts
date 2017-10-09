@@ -15,6 +15,7 @@ export class AdvancedTraceService{
 
 	static counter:number = 0;
 	instance: number;
+    info:string;
 
 	constructor(){
 		this.instance = ++AdvancedTraceService.counter;
@@ -24,7 +25,7 @@ export class AdvancedTraceService{
 		if( src ){
 			msg = `${src.constructor.name}::${msg}`;
 		}
-		console.log(`Tracer ${this.instance} received:\n${msg}`);
+		console.log(`Tracer ${this.instance}\n${this.info}\nReceived:\n${msg}`);
 	}
 
 }
