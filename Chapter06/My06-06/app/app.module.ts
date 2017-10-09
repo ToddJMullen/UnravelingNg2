@@ -17,7 +17,7 @@ import {TraceService} from "./trace.service";
   ]
    ,providers: [
 //	   InventoryService
-	   TraceService//Provide one instance for the whole application
+//	   TraceService//Provide one instance for the whole application
    ]
   ,bootstrap: [AppComponent]
 })
