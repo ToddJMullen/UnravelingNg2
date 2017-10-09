@@ -22,7 +22,7 @@ let baseInventory = ["Shark sandwiches","Tofu","Flash Grenades","Baby Powder"]
 	  ,{provide: InventoryService
 //	  	,useClass: InventoryPlusTracingService//we'll switch to a factory to get our instance
         ,useFactory: inventoryFactory( baseInventory, instructor )
-        ,deps: [AdvancedTraceService]//make sure the factory has it's dependencies
+        ,deps: [AdvancedTraceService]//make sure the factory has it's dependencies which also use the DI tree
 	  }
   ]
   ,template: `
