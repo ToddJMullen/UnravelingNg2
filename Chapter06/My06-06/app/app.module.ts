@@ -8,6 +8,10 @@ import {DiverComponent} from './diver.component';
 //import {InventoryService} from "./tracing-inventory.service"
 import {TraceService, AdvancedTraceService} from "./trace.service";
 
+let myInstance = new AdvancedTraceService();
+myInstance.info = "(my manual instance)"
+
+
 @NgModule({
   imports: [BrowserModule],
   declarations: [
@@ -18,7 +22,8 @@ import {TraceService, AdvancedTraceService} from "./trace.service";
    ,providers: [
 //	   InventoryService
 //	   TraceService//Provide one instance for the whole application
-	   AdvancedTraceService
+//	   AdvancedTraceService
+       ,{provide:AdvancedTraceService, useValue: myInstance}
 	   ,{provide: TraceService, useExisting: AdvancedTraceService}
    ]
   ,bootstrap: [AppComponent]
