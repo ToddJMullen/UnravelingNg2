@@ -4,8 +4,24 @@ import {Injectable} from "@angular/core";
 export class TraceService{
 	trace( msg:string, src ):void{
 		if( src ){
-			msg = src.constructor.name + ": " + msg;
+			msg = `${src.constructor.name}: ${msg}`;
 		}
 		console.log(msg);
 	}
+}
+
+@Injectable()
+export class AdvancedTraceService{
+
+	static counter:number = 0;
+	instance: number;
+
+	constructor(){
+		this.instance = ++AdvancedTraceService.counter;
+	}
+
+	trace(msg:string){
+		console.log(``)
+	}
+
 }
