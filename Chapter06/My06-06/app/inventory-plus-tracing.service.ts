@@ -1,7 +1,7 @@
 import {Injectable, Optional} from "@angular/core";
 
 import {IInventory} from "./iinventory.iface";
-import {TraceService} from "./trace.service";
+import {AdvancedTraceService} from "./trace.service";
 
 @Injectable()
 export class InventoryPlusTracingService implements IInventory{
@@ -10,7 +10,7 @@ export class InventoryPlusTracingService implements IInventory{
 	private _defaultOwner:string;
 
 	constructor(
-		@Optional() private tracer:TraceService
+		@Optional() private tracer:AdvancedTraceService
 	){
 //		console.log("InventoryPlusTracingService()");
 		if( this.tracer ){

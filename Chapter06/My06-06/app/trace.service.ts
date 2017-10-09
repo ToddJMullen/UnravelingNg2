@@ -22,7 +22,7 @@ export class AdvancedTraceService{
 
 	trace(msg:string, src){
 		if( src ){
-			msg = `${src.constructor.name}: ${msg}`;
+			msg = `${src.constructor.name}::${msg}`;
 		}
 		console.log(`Tracer ${this.instance} received:\n${msg}`);
 	}
