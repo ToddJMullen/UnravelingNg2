@@ -13,7 +13,9 @@ export class InventoryPlusTracingService implements IInventory{
 		@Optional() private tracer:TraceService
 	){
 		console.log("InventoryPlusTracingService()");
-		tracer.trace("construct()", this );
+		if( this.tracer ){
+			tracer.trace("construct()", this );
+		}
 	}
 
 
