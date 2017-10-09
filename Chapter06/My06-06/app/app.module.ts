@@ -6,7 +6,7 @@ import {ItemComponent} from './item.component';
 import {DiverComponent} from './diver.component';
 // import {InventoryService} from './inventory.service';
 //import {InventoryService} from "./tracing-inventory.service"
-import {TraceService} from "./trace.service";
+import {TraceService, AdvancedTraceService} from "./trace.service";
 
 @NgModule({
   imports: [BrowserModule],
@@ -18,6 +18,7 @@ import {TraceService} from "./trace.service";
    ,providers: [
 //	   InventoryService
 //	   TraceService//Provide one instance for the whole application
+	   {provide: TraceService, useClass: AdvancedTraceService}
    ]
   ,bootstrap: [AppComponent]
 })
