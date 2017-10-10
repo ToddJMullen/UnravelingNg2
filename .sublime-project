@@ -1,0 +1,7 @@
+{
+    "folders": [{
+        "path": ".",
+        "folder_exclude_patterns": ["*/*/*.js", "*/*/*.map", ".metadata", ".settings"],
+        "file_exclude_patterns": []
+    }]
+}
