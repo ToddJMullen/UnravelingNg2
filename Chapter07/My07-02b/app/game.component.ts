@@ -15,6 +15,7 @@ export class GameComponent {
   }
 
   handleTokenEvent(newTokens: number) {
+	  console.log("GameComponent::handleTokenEvent(), newTokens:", newTokens );
     this.collected += newTokens;
   }
 }

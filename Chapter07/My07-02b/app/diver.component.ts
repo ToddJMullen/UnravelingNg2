@@ -15,20 +15,21 @@ export class DiverComponent {
   @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound:number = 0;
 
-  onNgInit(){;
+  onNgInit(){
+	  this.cheaterTokens = Math.floor( Math.random() * 10 );
   }
 
   found() {
     console.log(this.cheaterTokens)
     let numFound = this.tryLuck()
-    this.tokensFound += numFound;// + this.cheaterTokens;
-    this.onTokenEvent.emit(numFound);
+    this.tokensFound += numFound + this.cheaterTokens;
+    this.onTokenEvent.emit(numFound + this.cheaterTokens);
   }
 
   lost() {
     let numLost = this.tryLuck();
-    this.tokensFound -= numLost;// + this.cheaterTokens;
-    this.onTokenEvent.emit(-numLost);
+    this.tokensFound -= numLost + this.cheaterTokens;
+    this.onTokenEvent.emit(-numLost + this.cheaterTokens);
   }
 
   tryLuck(): number {
