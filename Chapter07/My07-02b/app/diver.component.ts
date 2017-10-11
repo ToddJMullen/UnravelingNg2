@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Input, Output, EventEmitter} from '@angular/core';
+import { Component } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'yw-diver',
@@ -7,28 +7,34 @@ import {Input, Output, EventEmitter} from '@angular/core';
 })
 export class DiverComponent {
 
-	ODDS_AGAINST: number = .5;
-	JACKPOT:number = 1000;
+	ODDS_AGAINST_DIVER: number = .6;
+	JACKPOT: number = 1000;
 
-  @Input() name: string;
-  @Output() onTokenFound = new EventEmitter<number>();
-  tokensFound = 0;
+  @Input() diverName: string;
+  @Input() cheaterTokens:number;
+  @Output() onTokenEvent = new EventEmitter<number>();
+  tokensFound:number = 0;
+
+  onNgInit(){;
+  }
 
   found() {
-	let numFound = this.tryLuck()
-	this.tokensFound += numFound;
-	this.onTokenFound.emit(numFound);
+    console.log(this.cheaterTokens)
+    let numFound = this.tryLuck()
+    this.tokensFound += numFound;// + this.cheaterTokens;
+    this.onTokenEvent.emit(numFound);
   }
 
   lost() {
-    this.tokensFound--;
-    this.onTokenFound.emit(-1);
+    let numLost = this.tryLuck();
+    this.tokensFound -= numLost;// + this.cheaterTokens;
+    this.onTokenEvent.emit(-numLost);
   }
 
-  tryLuck():number{
-	  if( Math.random() > this.ODDS_AGAINST ){
-		  return Math.floor(Math.random() * this.JACKPOT);
-	  }
-	  return 1;
+  tryLuck(): number {
+    if (Math.random() > this.ODDS_AGAINST_DIVER) {
+      return Math.floor(Math.random() * this.JACKPOT);
+    }
+    return 1;
   }
 }
