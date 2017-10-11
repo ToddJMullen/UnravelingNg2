@@ -11,19 +11,19 @@ export class DiverComponent {
 	JACKPOT: number = 1000;
 
   @Input() name: string;
-  @Output() onTokenFound = new EventEmitter<number>();
+  @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound = 0;
 
   found() {
     let numFound = this.tryLuck()
     this.tokensFound += numFound;
-    this.onTokenFound.emit(numFound);
+    this.onTokenEvent.emit(numFound);
   }
 
   lost() {
     let numLost = this.tryLuck();
     this.tokensFound -= numLost;
-    this.onTokenFound.emit(-numLost);
+    this.onTokenEvent.emit(-numLost);
   }
 
   tryLuck(): number {
