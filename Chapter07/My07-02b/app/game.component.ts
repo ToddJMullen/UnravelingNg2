@@ -9,7 +9,12 @@ export class GameComponent {
   collected = 0;
   divers = ["Bob", "Cecile", "Jake","Raul","Mondo"]
 
-  tokenFound(newTokens: number) {
+
+  getCheaterTokens():number{
+  	return Math.floor( Math.random() * this.targetTokens );
+  }
+
+  handleTokenEvent(newTokens: number) {
     this.collected += newTokens;
   }
 }

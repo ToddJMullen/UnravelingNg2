@@ -5,9 +5,15 @@ import {Component} from '@angular/core';
   templateUrl: 'app/game.template.html' 
 })
 export class GameComponent {
-  tokens = 4;
+  targetTokens = 4;
   collected = 0;
   divers = ["Bob", "Cecile", "Jake"]
+
+
+  getCheaterTokens():number{
+  	return Math.floor( Math.random() * this.targetTokens );
+  }
+
 
   handleTokenEvent(newTokens: number) {
     this.collected += newTokens;

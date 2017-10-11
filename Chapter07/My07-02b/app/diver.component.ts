@@ -10,19 +10,24 @@ export class DiverComponent {
 	ODDS_AGAINST_DIVER: number = .6;
 	JACKPOT: number = 1000;
 
-  @Input() name: string;
+  @Input() diverName: string;
+  @Input() cheaterTokens:number;
   @Output() onTokenEvent = new EventEmitter<number>();
-  tokensFound = 0;
+  tokensFound:number = 0;
+
+  onNgInit(){;
+  }
 
   found() {
+    console.log(this.cheaterTokens)
     let numFound = this.tryLuck()
-    this.tokensFound += numFound;
+    this.tokensFound += numFound;// + this.cheaterTokens;
     this.onTokenEvent.emit(numFound);
   }
 
   lost() {
     let numLost = this.tryLuck();
-    this.tokensFound -= numLost;
+    this.tokensFound -= numLost;// + this.cheaterTokens;
     this.onTokenEvent.emit(-numLost);
   }
 

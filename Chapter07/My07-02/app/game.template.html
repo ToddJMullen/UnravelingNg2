@@ -24,6 +24,7 @@
 </div>
 
 <yw-diver *ngFor="let diver of divers"
-  [name]="diver"
-  (onTokenEvent)="handleTokenEvent($event)">
+	[cheaterTokens]="getCheaterTokens()"
+	[name]="diver"
+	(onTokenEvent)="handleTokenEvent($event)">
 </yw-diver>
