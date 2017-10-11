@@ -9,7 +9,7 @@ export class GameComponent {
   collected = 0;
   divers = ["Bob", "Cecile", "Jake"]
 
-  tokenFound(newTokens: number) {
+  handleTokenEvent(newTokens: number) {
     this.collected += newTokens;
   }
 }
