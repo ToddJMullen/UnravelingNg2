@@ -25,7 +25,7 @@ export class GameComponent implements OnInit {
 	}
 
 	ngOnInit(){
-
+		this.msgBus.postMessage("GameComponent::ngOnInit()");
 	}
 
 
@@ -39,6 +39,7 @@ export class GameComponent implements OnInit {
 
 	handleTokenEvent(newTokens: number) {
 		console.log("GameComponent::handleTokenEvent(), newTokens:", newTokens );
+		this.msgBus.postMessage("GameComponent::handleTokenEvent(), newTokens:" + newTokens );
 		this.collected += newTokens;
 	}
 
