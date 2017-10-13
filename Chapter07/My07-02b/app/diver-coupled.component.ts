@@ -16,7 +16,8 @@ export class DiverCoupledComponent {
 	@Input() gameCtx:GameComponent;
 
 	@Input() diverName:string;
-	@Input() cheaterTokens:number;
+	
+	cheaterTokens:number;
 	tokensFound:number = 0;
 
 	onNgInit(){
