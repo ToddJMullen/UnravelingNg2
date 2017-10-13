@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
       <yw-game></yw-game>
     </div>
   `
+
 })
 export class AppComponent {
 }

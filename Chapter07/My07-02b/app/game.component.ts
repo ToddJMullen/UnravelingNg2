@@ -1,10 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {MsgBusService} from "./msg-bus.service";
 
 @Component({
   selector: 'yw-game',
   templateUrl: 'app/game.template.html'
 })
-export class GameComponent {
+export class GameComponent implements OnInit {
 
 
 	ODDS_AGAINST_DIVER: number = .6;
@@ -15,6 +17,17 @@ export class GameComponent {
 	diverAry		= ["Bob", "Cecile", "Jake"];
 	coupledDiverAry	= ["Raul","Mondo"];
 	diDiverAry		= ["Leslie","Emma","Laura"];
+
+	constructor(
+		private msgBus:MsgBusService
+	){
+		this.msgBus.postMessage("GameComponent()");
+	}
+
+	ngOnInit(){
+
+	}
+
 
 	getInstance(){
 		return this;
