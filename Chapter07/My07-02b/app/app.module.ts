@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {GameComponent} from './game.component';
 import {DiverComponent} from './diver.component';
+import {DiverCoupledComponent} from "./diver-coupled.component";
 
 @NgModule({
   imports: [BrowserModule],

@@ -10,7 +10,7 @@ export class DiverComponent {
 	ODDS_AGAINST_DIVER: number = .6;
 	JACKPOT: number = 1000;
 
-  @Input() diverName: string;
+  @Input() diverName:string;
   @Input() cheaterTokens:number;
   @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound:number = 0;
