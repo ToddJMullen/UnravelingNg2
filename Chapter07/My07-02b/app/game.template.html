@@ -23,13 +23,18 @@
   </div>
 </div>
 	<!-- [cheaterTokens]="getCheaterTokens()" -->
+<h2>Plain Divers</h2>
 <yw-diver *ngFor="let diver of diverAry"
 	[diverName]="diver"
 	(onTokenEvent)="handleTokenEvent($event)">
 </yw-diver>
 
+<h2>Coupled Divers</h2>
 <yw-diver-coupled *ngFor="let name of coupledDiverAry"
 	[diverName]="name"
 	gameCtx="getInstance()" >
-		
-	</yw-diver-coupled>
+</yw-diver-coupled>
+
+<h2>DI Divers</h2>
+<yw-diver-di *ngFor="let name of diDiverAry"
+	[diverName]="name" ></yw-diver-di>

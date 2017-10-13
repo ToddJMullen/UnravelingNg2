@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'yw-diver',
   templateUrl: 'app/diver.template.html'
+  ,styles: [`
+  yw-diver{
+  	background-color:#cff;
+  }
+  `]
 })
-export class DiverComponent {
+export class DiverComponent implements OnInit{
 
 	ODDS_AGAINST_DIVER: number = .6;
 	JACKPOT: number = 1000;
@@ -15,7 +20,7 @@ export class DiverComponent {
   @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound:number = 0;
 
-  onNgInit(){
+  ngOnInit(){
 	  this.cheaterTokens = Math.floor( Math.random() * 10 );
   }
 

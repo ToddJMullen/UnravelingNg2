@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, OnInit } from '@angular/core';
 
 import {GameComponent} from "./game.component";
 
 @Component({
   selector: 'yw-diver-coupled',
   templateUrl: 'app/diver-coupled.template.html'
+  ,styles: [`
+  yw-diver-coupled{
+  	background-color:#ffc;
+  }
+  `]
 })
-export class DiverCoupledComponent {
+export class DiverCoupledComponent implements OnInit {
 	/**
 	This is a re-implementation of the DiveComponent that uses direct/explicit injection
 	of the parent GameController to effect changes within the game's state.
@@ -20,7 +25,12 @@ export class DiverCoupledComponent {
 	cheaterTokens:number;
 	tokensFound:number = 0;
 
-	onNgInit(){
+	constructor(){
+		console.log( "DiverCoupledComponent(), game context:" this.gameCtx ); 
+	}
+
+	ngOnInit(){
+		console.log( "DiverCoupledComponent::onNgInit(), game context:" this.gameCtx ); 
 		this.cheaterTokens = Math.floor( Math.random() * 10 );
 	}
 

@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {GameComponent} from './game.component';
 import {DiverComponent} from './diver.component';
 import {DiverCoupledComponent} from "./diver-coupled.component";
+import {DiverDiComponent} from "./diver-di.component";
 
 @NgModule({
   imports: [BrowserModule],
@@ -12,7 +13,8 @@ import {DiverCoupledComponent} from "./diver-coupled.component";
     AppComponent,
     GameComponent,
     DiverComponent,
-    DiverCoupledComponent
+    DiverCoupledComponent,
+    DiverDiComponent
   ],
   bootstrap: [AppComponent]
 })

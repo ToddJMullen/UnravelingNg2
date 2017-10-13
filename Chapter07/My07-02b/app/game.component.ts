@@ -10,10 +10,11 @@ export class GameComponent {
 	ODDS_AGAINST_DIVER: number = .6;
 	JACKPOT: number = 1000;
 
-	targetTokens = 4;
-	collected = 0;
-	diverAry = ["Bob", "Cecile", "Jake"]
-	coupledDiverAry = ["Raul","Mondo"]
+	targetTokens	= 4;
+	collected		= 0;
+	diverAry		= ["Bob", "Cecile", "Jake"];
+	coupledDiverAry	= ["Raul","Mondo"];
+	diDiverAry		= ["Leslie","Emma","Laura"];
 
 	getInstance(){
 		return this;
