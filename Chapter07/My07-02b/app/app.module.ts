@@ -11,7 +11,8 @@ import {DiverCoupledComponent} from "./diver-coupled.component";
   declarations: [
     AppComponent,
     GameComponent,
-    DiverComponent
+    DiverComponent,
+    DiverCoupledComponent
   ],
   bootstrap: [AppComponent]
 })

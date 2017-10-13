@@ -22,12 +22,14 @@
     </h4>
   </div>
 </div>
+	<!-- [cheaterTokens]="getCheaterTokens()" -->
 <yw-diver *ngFor="let diver of diverAry"
-	[cheaterTokens]="getCheaterTokens()"
 	[diverName]="diver"
 	(onTokenEvent)="handleTokenEvent($event)">
 </yw-diver>
 
 <yw-diver-coupled *ngFor="let name of coupledDiverAry"
 	[diverName]="name"
-	gameCtx="getInstance()" ></yw-diver-coupled>
+	gameCtx="getInstance()" >
+		
+	</yw-diver-coupled>
