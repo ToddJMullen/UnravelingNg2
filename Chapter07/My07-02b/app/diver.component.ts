@@ -17,7 +17,20 @@ export class DiverComponent implements OnInit{
 	ODDS_AGAINST_DIVER: number = .6;
 	JACKPOT: number = 1000;
 
-  @Input() diverName:string;
+	_diverName:string;
+	@Input() get diverName():string{
+		return this._diverName;
+	}
+	set diverName( name:string ){
+		this._diverName = name;
+		if( this.msgBus ){
+			this.msgBus.postMessage(
+				`DiverComponent diverName changed to: '${name}'`
+			);
+		}
+
+	}
+
   @Input() cheaterTokens:number;
   @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound:number = 0;
