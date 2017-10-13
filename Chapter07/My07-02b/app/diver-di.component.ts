@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 
+import {MsgBusService} from "./msg-bus.service";
 import {GameComponent}	from "./game.component";
+
 
 
 @Component({
@@ -13,7 +15,7 @@ import {GameComponent}	from "./game.component";
   }
   `]
 })
-export class DiverDiComponent {
+export class DiverDiComponent implements OnInit {
 
 
   @Input() diverName:string;
@@ -23,9 +25,17 @@ export class DiverDiComponent {
 
   constructor(
   	private gameCtx:GameComponent
+	,private msgBus:MsgBusService
   ){
   	console.log("DiverDiComponent()");
   	this.cheaterTokens = this.gameCtx.getCheaterTokens();
+	this.msgBus.postMessage("DiverDiComponent() '" + this.diverName
+		+ "' has " + this.cheaterTokens + " cheater tokens." );
+  }
+
+  ngOnInit(){
+	  this.msgBus.postMessage("DiverDiComponent::ngOnInit() '" + this.diverName
+		  + "' has " + this.cheaterTokens + " cheater tokens." );
   }
 
   found() {
@@ -44,8 +54,8 @@ export class DiverDiComponent {
   }
 
   tryLuck(): number {
-    if (Math.random() > this.ODDS_AGAINST_DIVER) {
-      return Math.floor(Math.random() * this.JACKPOT);
+    if (Math.random() > this.gameCtx.ODDS_AGAINST_DIVER) {
+      return Math.floor(Math.random() * this.gameCtx.JACKPOT);
     }
     return 1;
   }

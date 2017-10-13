@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 
+import {MsgBusService} from "./msg-bus.service";
+
 @Component({
   selector: 'yw-diver',
   templateUrl: 'app/diver.template.html'
@@ -20,8 +22,17 @@ export class DiverComponent implements OnInit{
   @Output() onTokenEvent = new EventEmitter<number>();
   tokensFound:number = 0;
 
+  constructor(
+	  private msgBus:MsgBusService
+  ){
+	  this.msgBus.postMessage("DiverComponent() '" + this.diverName
+		  + "' has " + this.cheaterTokens + " cheater tokens." );
+  }
+
   ngOnInit(){
 	  this.cheaterTokens = Math.floor( Math.random() * 10 );
+	  this.msgBus.postMessage("DiverComponent::ngOnInit() '" + this.diverName
+		  + "' has " + this.cheaterTokens + " cheater tokens." );
   }
 
   found() {

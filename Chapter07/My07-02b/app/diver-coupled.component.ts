@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Input, OnInit } from '@angular/core';
 
+import {MsgBusService} from "./msg-bus.service";
+
 import {GameComponent} from "./game.component";
 
 @Component({
@@ -21,17 +23,24 @@ export class DiverCoupledComponent implements OnInit {
 	@Input() gameCtx:GameComponent;
 
 	@Input() diverName:string;
-	
+
 	cheaterTokens:number;
 	tokensFound:number = 0;
 
-	constructor(){
-		console.log( "DiverCoupledComponent(), game context:" this.gameCtx ); 
+	constructor(
+		private msgBus:MsgBusService
+	){
+		console.log( "DiverCoupledComponent(), game context:", this.gameCtx );
+	  	  this.msgBus.postMessage("DiverCoupledComponent() '" + this.diverName
+	  		  + "' has " + this.cheaterTokens + " cheater tokens." );
 	}
 
 	ngOnInit(){
-		console.log( "DiverCoupledComponent::onNgInit(), game context:" this.gameCtx ); 
+		console.log( "DiverCoupledComponent::onNgInit(), game context:", this.gameCtx );
 		this.cheaterTokens = Math.floor( Math.random() * 10 );
+		// this.cheaterTokens = this.gameCtx.getCheaterTokens();//<= not defined here
+		this.msgBus.postMessage("DiverCoupledComponent::ngOnInit() " + this.diverName
+			+ " has " + this.cheaterTokens + " cheater tokens." );
 	}
 
   found() {
