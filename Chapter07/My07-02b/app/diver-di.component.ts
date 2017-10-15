@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { OnChanges } from "@angular/core";
 
 import {MsgBusService} from "./msg-bus.service";
 import {GameComponent}	from "./game.component";
@@ -15,7 +16,7 @@ import {GameComponent}	from "./game.component";
   }
   `]
 })
-export class DiverDiComponent implements OnInit {
+export class DiverDiComponent implements OnInit, OnChanges {
 
 
   @Input() diverName:string;
@@ -37,6 +38,16 @@ export class DiverDiComponent implements OnInit {
 	  this.msgBus.postMessage("DiverDiComponent::ngOnInit() '" + this.diverName
 		  + "' has " + this.cheaterTokens + " cheater tokens." );
   }
+
+  ngOnChanges( changes ){
+  	console.log("DiverDiComponent::ngOnChanges() detected changes: ", changes );
+  	this.msgBus.postMessage(`ngOnChanges() changes detected: ${changes}` );
+  	let name = changes['diverName'];
+  	if( name && this.msgBus ){
+  		this.msgBus.postMessage(`New value of DiverDi's name: '${name}'` )
+  	}
+  }
+
 
   found() {
     console.log(this.cheaterTokens)
