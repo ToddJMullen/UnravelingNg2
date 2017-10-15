@@ -41,10 +41,10 @@ export class DiverDiComponent implements OnInit, OnChanges {
 
   ngOnChanges( changes ){
   	console.log("DiverDiComponent::ngOnChanges() detected changes: ", changes );
-  	this.msgBus.postMessage(`ngOnChanges() changes detected: ${changes}` );
+  	this.msgBus.postMessage(`ngOnChanges() changes detected: ` + JSON.stringify(changes) );
   	let name = changes['diverName'];
   	if( name && this.msgBus ){
-  		this.msgBus.postMessage(`New value of DiverDi's name: '${name}'` )
+  		this.msgBus.postMessage(`New value of DiverDi's name: ` + name.currentValue )
   	}
   }
 
