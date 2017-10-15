@@ -9,7 +9,7 @@ export class MsgBusService{
 	messageStream = this.messageSource.asObservable();
 
 	postMessage(message:string){
-		console.log("MsgBusService::postMessage(), received: ", message );
+		// console.log("MsgBusService::postMessage(), received: ", message );
 		this.messageSource.next(message);
 	}
 }
