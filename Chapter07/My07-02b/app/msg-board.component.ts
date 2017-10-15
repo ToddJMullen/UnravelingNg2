@@ -18,9 +18,12 @@ import {MsgBusService} from "./msg-bus.service";
 	background-color: #cfe;
 	border: 1px inset teal;
 	text-align: center;
+	opacity: .55;
+	width: 50%; height: 50%;
+	position: fixed; top: 75px; right: 5px;
+	overflow-y: auto;
 }
 	`]
-}
 })
 export class MsgBoardComponent{
 
@@ -31,7 +34,7 @@ export class MsgBoardComponent{
 		private msgBus:MsgBusService
 	){
 		this.msgBus.messageStream.subscribe(
-			msg => this.msgAry.push( msg );
+			msg => this.msgAry.push( msg )
 		)
 	}
 

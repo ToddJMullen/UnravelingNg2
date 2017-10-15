@@ -38,14 +38,14 @@ export class DiverComponent implements OnInit{
   constructor(
 	  private msgBus:MsgBusService
   ){
-	  this.msgBus.postMessage("DiverComponent() '" + this.diverName
-		  + "' has " + this.cheaterTokens + " cheater tokens." );
+	  this.msgBus.postMessage(`DiverComponent()<br/>
+	  '${this.diverName}' has ${this.cheaterTokens} cheater tokens.` );
   }
 
   ngOnInit(){
 	  this.cheaterTokens = Math.floor( Math.random() * 10 );
-	  this.msgBus.postMessage("DiverComponent::ngOnInit() '" + this.diverName
-		  + "' has " + this.cheaterTokens + " cheater tokens." );
+	  this.msgBus.postMessage("DiverComponent::ngOnInit()<br/>" + `
+	  '${this.diverName}' has ${this.cheaterTokens} cheater tokens.` );
   }
 
   found() {
