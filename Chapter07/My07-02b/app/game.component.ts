@@ -14,9 +14,9 @@ export class GameComponent implements OnInit {
 
 	targetTokens	= 4;
 	collected		= 0;
-	diverAry		= ["Bob", "Cecile", "Jake"];
+	diverAry		= ["Bob", "Cecile"];
 	coupledDiverAry	= ["Raul","Mondo"];
-	diDiverAry		= ["Leslie","Emma","Laura"];
+	diDiverAry		= ["Leslie","Emma"];
 
 	constructor(
 		private msgBus:MsgBusService
