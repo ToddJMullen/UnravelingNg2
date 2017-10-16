@@ -29,7 +29,7 @@ export class GameComponent implements OnInit {
 	}
 
 
-	getInstance(){
+	getInstance():GameComponent{
 		return this;
 	}
 
