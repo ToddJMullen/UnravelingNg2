@@ -21,8 +21,9 @@ export class TocComponent {
   @ContentChild(HeaderDirective) header;
   @ContentChildren(HnDirective) elements: QueryList<HnDirective>;
   level = 2;
-  
+
   getFilteredElements() {
+	  console.log("TocComponent::getFilteredElements()", this.elements );
     return this.elements.toArray().filter(e => e.level <= this.level);
   }
 }
