@@ -10,5 +10,7 @@ export class HeaderDirective implements OnInit {
 
   ngOnInit() {
     this.text = this.element.nativeElement.textContent;
+  	  console.log("HeaderDirective::ngOnInit() instantiated for element ", this.element.nativeElement.tagName
+	  , " containing text: " + this.text);
   }
 }
