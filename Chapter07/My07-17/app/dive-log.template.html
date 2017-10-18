@@ -1,25 +1,26 @@
 <div class="row">
   <div class="col-sm-5">
     <button class="btn btn-default"
-      (click)="searchBox.searchText='8'">
+      (click)="searchFor('8')">
+<!-- the 8 must be a string in order to be compatible with the contentFilter pipe -->
         Search for '8'
     </button>
     <button class="btn btn-default"
-      (click)="searchBox.searchText='Hun'">
+      (click)="searchFor('Hun')">
         Search for 'Hun'
     </button>
     <button class="btn btn-default"
-      (click)="searchBox.searchText=''">
+      (click)="searchFor('')">
         Clear
     </button>
   </div>
   <div class="col-sm-4 col-sm-offset-3">
-    <search-box #searchBox></search-box>
+    <search-box #tiSearch></search-box>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-4"
-    *ngFor="let dive of dives | contentFilter:searchBox.searchText">
+    *ngFor="let dive of dives | contentFilter:tiSearch.searchText">
     <h3>{{dive.site}}</h3>
     <h4>{{dive.location}}</h4>
     <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
