@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 export class DiveLogFormComponent {
   specialDives = [
     "Night dive",
-    "deep dive",
+    "Deep dive",
     "Cave dive"
   ]
 }
