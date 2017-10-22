@@ -9,6 +9,7 @@ import {SpecialDivesEnum} from "./SpecialDives.enum";
 })
 export class DiveLogFormComponent {
 
+	specialDivesAry:string[] = SpecialDivesEnum.toArray();
 
 	entry: DiveLogEntry = {
 		site: "Barnes & Noble"
