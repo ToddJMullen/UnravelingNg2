@@ -3,14 +3,14 @@
     <div class="col-sm-6">
       <div class="form-group">
         <label for="site">Dive site</label>
-        <input class="form-control" id="site" 
+        <input id="site" class="form-control"
           placeholder="dive site">
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
         <label for="location">Location</label>
-        <input class="form-control" id="location" 
+        <input id="location" class="form-control"
           placeholder="location">
       </div>
     </div>
@@ -19,19 +19,19 @@
     <div class="col-sm-3">
       <div class="form-group">
         <label for="depth">Max. depth</label>
-        <input class="form-control" id="depth">
+        <input id="depth" class="form-control">
       </div>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
         <label for="time">Bottom time</label>
-        <input class="form-control" id="time">
+        <input id="time" class="form-control">
       </div>
     </div>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox" name="favorite" checked>
+      <input name="favorite" checked type="checkbox">
       Mark as favorite
     </label>
   </div>
@@ -40,15 +40,14 @@
     <div class="radio"
       *ngFor="let diveType of specialDives">
       <label>
-        <input type="radio" name="special" [value]="diveType">
+        <input name="special" type="radio" [value]="diveType">
         {{diveType}}
       </label>
     </div>
   </div>
   <div class="form-group">
     <label for="comments">Comments</label>
-    <textarea class="form-control" id="comments" rows="5">
-    </textarea>
+    <textarea id="comments" rows="5" class="form-control"></textarea>
   </div>
   <button class="btn btn-primary" type="submit">
     Submit
