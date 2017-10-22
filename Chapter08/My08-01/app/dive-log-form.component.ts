@@ -6,6 +6,7 @@ import {SpecialDivesEnum} from "./SpecialDives.enum";
 @Component({
   selector: 'dive-log-form',
   templateUrl: 'app/dive-log-form.template.html'
+  ,styleUrls: ["app/dive-log-form.styles.css"]
 })
 export class DiveLogFormComponent {
 
