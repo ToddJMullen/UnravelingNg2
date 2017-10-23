@@ -5,6 +5,8 @@
         <label for="site">Dive site</label>
         <input name="site" id="site" class="form-control"
 			[(ngModel)]="entry.site"
+			#tiSite="ngModel"
+			[class.has-error]="tiSite.invalid"
 			required
           	placeholder="Dive site">
       </div>
@@ -14,6 +16,8 @@
         <label for="location">Location</label>
         <input name="location" id="location" class="form-control"
 			[(ngModel)]="entry.location"
+			#tiLocation="ngModel"
+			[class.has-error]="tiLocation.invalid"
 			required
           	placeholder="Location">
       </div>
@@ -25,6 +29,8 @@
         <label for="depth">Max. depth</label>
         <input name="depth" id="depth" type="number" class="form-control"
 				[(ngModel)]="entry.depth"
+				#tiDepth="ngModel"
+				[class.has-error]="tiDepth.invalid"
 				required
 				max="500" maxlength="2" >
       </div>
@@ -35,6 +41,8 @@
         <input name="time" name="time" id="time" class="form-control"
 				type="number" max="240"
 				[(ngModel)]="entry.time"
+				#tiTime="ngModel"
+				[class.has-error]="tiTime.invalid"
 				required
 				>
       </div>
@@ -52,7 +60,8 @@
     <div class="radio"
       *ngFor="let diveType of specialDivesAry">
       <label>
-        <input name="special" type="radio" [value]="diveType"
+        <input name="special" type="radio"
+				[value]="diveType"
 				[(ngModel)]="entry.special">
         {{diveType}}
       </label>
