@@ -1,5 +1,10 @@
-<form>
+<form *ngIf="!submitted"
+	novalidate
+	(ngSubmit)="doSubmit()"
+	#formDiveLog="ngForm"
+>
   <div class="row">
+	<h1>Enter a new Dive Log Record</h1>
     <div class="col-sm-6">
       <div class="form-group">
         <label for="site">Dive site</label>
@@ -87,9 +92,12 @@
     <textarea name="comments" id="comments" rows="5" class="form-control"
     		[(ngModel)]="entry.comments"></textarea>
   </div>
-  <button class="btn btn-primary" type="submit">
+  <button class="btn btn-primary" type="submit"
+  	[disabled]="formDiveLog.invalid">
     Submit
   </button>
-  <br>
-  <pre>{{entry | json}}</pre>
 </form>
+
+<hr>
+  <h2 *ngIf="submitted">The form has been submitted.</h2>
+<pre>{{entry | json}}</pre>

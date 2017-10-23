@@ -10,6 +10,8 @@ import {SpecialDivesEnum} from "./SpecialDives.enum";
 })
 export class DiveLogFormComponent {
 
+	submitted = false;
+
 	specialDivesAry:string[] = SpecialDivesEnum.toArray();
 
 	entry: DiveLogEntry = {
@@ -19,6 +21,11 @@ export class DiveLogFormComponent {
 		,time: 150
 		,isFavorite: true
 		,special: SpecialDivesEnum.DEEP_DIVE
+	}
+
+	doSubmit(){
+		this.submitted = true;
+		return false;
 	}
 
 }
