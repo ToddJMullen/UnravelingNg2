@@ -7,8 +7,14 @@
 			[(ngModel)]="entry.site"
 			#tiSite="ngModel"
 			[class.has-error]="tiSite.invalid"
-			required
-          	placeholder="Dive site">
+			required pattern="[a-zA-Z0-9 &]+"
+          	placeholder="Dive site" />
+		<div *ngIf="tiSite.errors?.required" class="help-block">
+			Please enter a name for this site.
+		</div>
+		<div *ngIf="tiSite.errors?.pattern" class="help-block">
+			Please use only letters &amp; numbers.
+		</div>
       </div>
     </div>
     <div class="col-sm-6">
@@ -20,6 +26,9 @@
 			[class.has-error]="tiLocation.invalid"
 			required
           	placeholder="Location">
+		<div *ngIf="tiLocation.errors?.required" class="help-msg">
+			Please enter a location for this site.
+		</div>
       </div>
     </div>
   </div>
@@ -33,6 +42,9 @@
 				[class.has-error]="tiDepth.invalid"
 				required
 				max="500" maxlength="2" >
+		<div *ngIf="tiDepth.errors?.required" class="help-msg">
+			Please enter the depth of the dive.
+		</div>
       </div>
     </div>
     <div class="col-sm-3">
@@ -45,6 +57,9 @@
 				[class.has-error]="tiTime.invalid"
 				required
 				>
+		<div *ngIf="tiTime.errors?.required" class="help-msg">
+			Please enter length of time for the dive (in minutes).
+		</div>
       </div>
     </div>
   </div>
