@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Input, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from "@angular/forms"
 
 import {DiveLogEntry} from "./dive-log-entry.iface";
 import {SpecialDivesEnum} from "./SpecialDives.enum";
@@ -8,9 +10,10 @@ import {SpecialDivesEnum} from "./SpecialDives.enum";
   templateUrl: 'app/dive-log-form.template.html'
   ,styleUrls: ["app/dive-log-form.styles.css"]
 })
-export class DiveLogFormComponent {
+export class DiveLogFormComponent implements OnInit{
 
 	submitted = false;
+	submittedDive:DiveLogEntry;
 
 	specialDivesAry:string[] = SpecialDivesEnum.toArray();
 
@@ -23,9 +26,29 @@ export class DiveLogFormComponent {
 		,special: SpecialDivesEnum.DEEP_DIVE
 	}
 
+	@Input() formDiveLog:FormGroup;
+
+	ngOnInit(){
+		console.log("DiveLogFormComponent::ngOnInit()");
+		this.formDiveLog = new FormGroup({
+			site		: new FormControl( this.entry.site, Validators.required )
+			,location	: new FormControl( this.entry.location, Validators.required )
+			,depth		: new FormControl( this.entry.depth, Validators.required )
+			,time		: new FormControl( this.entry.time, Validators.required )
+			,isFavorite	: new FormControl( this.entry.isFavorite )
+			,special	: new FormControl( this.entry.special )
+			,comments	: new FormControl( this.entry.comments )
+		})
+	}//ngOnInit()
+
+	notvalid( name:string ):boolean{
+		return this.formDiveLog.controls[ name ].invalid
+	}
+
 	doSubmit(){
 		this.submitted = true;
+		this.submittedDive = this.formDiveLog.value;
 		return false;
-	}
+	}//doSubmit()
 
 }
