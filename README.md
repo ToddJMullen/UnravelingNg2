@@ -25,3 +25,8 @@ Chapter 6 - Focused on dividing up an appication into modules & sharing the piec
 
 Chapter 7 - Components...
 
+Chapter 8 - Forms
+Built a form for submitting a DiveLogEntry first using the "Form Template" method, then converted the form to a
+"Reactive Form" with custom multi-part validation for time & depth, then provided custom error messages for each
+of the possible errors.
+IDE(s) Atom 32bit on Win 8 & 64bit on Linux / ChaletOS
