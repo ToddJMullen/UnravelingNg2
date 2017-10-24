@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Input, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from "@angular/forms"
+import {FormBuilder} from "@angular/forms";
 
 import {DiveLogEntry} from "./dive-log-entry.iface";
 import {SpecialDivesEnum} from "./SpecialDives.enum";
@@ -28,17 +29,32 @@ export class DiveLogFormComponent implements OnInit{
 
 	@Input() formDiveLog:FormGroup;
 
+	constructor(
+		private formBuilder: FormBuilder
+	){
+		console.log("DiveLogFormComponent()");
+	}
+
 	ngOnInit(){
 		console.log("DiveLogFormComponent::ngOnInit()");
-		this.formDiveLog = new FormGroup({
-			site		: new FormControl( this.entry.site, Validators.required )
-			,location	: new FormControl( this.entry.location, Validators.required )
-			,depth		: new FormControl( this.entry.depth, Validators.required )
-			,time		: new FormControl( this.entry.time, Validators.required )
-			,isFavorite	: new FormControl( this.entry.isFavorite )
-			,special	: new FormControl( this.entry.special )
-			,comments	: new FormControl( this.entry.comments )
-		})
+		// this.formDiveLog = new FormGroup({
+		// 	site		: new FormControl( this.entry.site, Validators.required )
+		// 	,location	: new FormControl( this.entry.location, Validators.required )
+		// 	,depth		: new FormControl( this.entry.depth, Validators.required )
+		// 	,time		: new FormControl( this.entry.time, Validators.required )
+		// 	,isFavorite	: new FormControl( this.entry.isFavorite )
+		// 	,special	: new FormControl( this.entry.special )
+		// 	,comments	: new FormControl( this.entry.comments )
+		// })
+		this.formDiveLog = this.formBuilder.group({
+			site		: [this.entry.site, Validators.required]
+			,location	: [this.entry.location, Validators.required]
+			,depth		: [this.entry.depth, Validators.required]
+			,time		: [this.entry.time, Validators.required]
+			,isFavorite	: [this.entry.isFavorite]
+			,special	: [this.entry.special]
+			,comments	: [this.entry.comments]
+		});
 	}//ngOnInit()
 
 	notvalid( name:string ):boolean{
