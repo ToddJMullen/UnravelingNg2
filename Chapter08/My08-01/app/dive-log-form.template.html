@@ -13,7 +13,7 @@
 			formControlName="site"
           	placeholder="Dive site" />
 		<div *ngIf="notvalid('site')" class="help-block">
-			Please enter a name for this site.
+			Error: {{getValidationMsg("site")}}
 		</div>
 		<!-- <div *ngIf="notvalid('site')" class="help-block">
 			Please use only letters &amp; numbers.
@@ -35,7 +35,7 @@
 			formControlName="location"
           	placeholder="Location">
 		<div *ngIf="notvalid('location')" class="help-msg">
-			Please enter a location for this site.
+			Error: {{getValidationMsg("location")}}
 		</div>
 		<!-- name="location"
 		[(ngModel)]="entry.location"
@@ -55,7 +55,7 @@
 		<input id="depth" class="form-control"
 				formControlName="depth">
 		<div *ngIf="notvalid('depth')" class="help-msg">
-			Please enter the depth of the dive.
+			Error: {{getValidationMsg("depth")}}
 		</div>
 		<!-- <input name="depth" id="depth" type="number" class="form-control"
 		[(ngModel)]="entry.depth"
@@ -82,7 +82,7 @@
 				[class.has-error]="tiTime.invalid"
 				required -->
 		<div *ngIf="notvalid('time')" class="help-msg">
-			Please enter length of time for the dive (in minutes).
+			Error: {{getValidationMsg("time")}}
 		</div>
       </div>
     </div>
