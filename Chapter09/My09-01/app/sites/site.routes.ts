@@ -18,6 +18,4 @@ export const siteRoutes: Routes = [
 	}
 ]//siteRoutes
 
-export const siteRoutingModule = RouterModule.forChild( siteRoutes );
-
-
+export const sitesRoutingModule = RouterModule.forChild( siteRoutes );

@@ -5,7 +5,7 @@ import {AppComponent}	from "./app.component";
 
 import {WelcomeModule}	from "./welcome/welcome.module";
 import {DiveLogModule}	from "./logs/dive-log.module";
-import {SitesModule}	from "./sites/sites.module";
+import {SiteModule}		from "./sites/site.module";
 
 
 import {routingModule} from "./app.routes";
@@ -15,16 +15,12 @@ import {routingModule} from "./app.routes";
 		BrowserModule
 		,WelcomeModule
 		,DiveLogModule
-		,SitesModule
+		,SiteModule
 		,routingModule
 	]
 	,declarations: [
 		AppComponent
 	]
-//	,providers: [
-//
-//	]
 	,bootstrap: [AppComponent]
 })
 export class AppModule{}
-
