@@ -4,4 +4,4 @@ import {Component} from "@angular/core";
 //	selector:"na"//not needed or instantiated, this component is only a host
 	template: `<router-outlet></router-outlet>`
 })
-export class SitesComponent{}
+export class SiteComponent{}
