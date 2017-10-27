@@ -1,5 +1,6 @@
 import {Component, EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
+import {ActivatedRoute} from "@angular/router";
 
 import {SiteManagementService} from './site-management.service'
 
@@ -11,11 +12,14 @@ export class AddSiteComponent {
   siteName: string;
 
   constructor(
-    private siteService: SiteManagementService,
-    private router: Router) { }
+		private siteService: SiteManagementService
+		,private router: Router
+		,private currentRoute:ActivatedRoute
+	) { }
 
   add() {
     this.siteService.addSite({id: 0, name:this.siteName});
-    this.router.navigate(['/list']);
+//    this.router.navigate(['/list']);
+	  this.router.navigate(['..'], {relativeTo: this.currentRoute});
   }
 }
