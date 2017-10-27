@@ -24,6 +24,6 @@ export class DeleteSiteComponent {
 
   delete() {
     this.siteService.deleteSite(this.siteId);
-    this.router.navigate(['/list']);
+    this.router.navigate(['../..'], {relativeTo: this.route});
   }
 }
