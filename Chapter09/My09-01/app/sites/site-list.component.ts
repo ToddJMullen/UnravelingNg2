@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import {DiveSite} from './dive-site';
 import {SiteManagementService} from './site-management.service'
+import {UserAuthService} from "../login/user-auth.service";
 
 @Component({
   selector: 'site-list-view',
@@ -10,11 +11,13 @@ import {SiteManagementService} from './site-management.service'
   styleUrls: ['app/sites/site-list.styles.css']
 })
 export class SiteListComponent {
+
   sites: DiveSite[];
 
   constructor(
-    private siteService: SiteManagementService,
-    private router: Router
+    private siteService: SiteManagementService
+    ,private router: Router
+	 ,private authService: UserAuthService
   ) {
     this.sites = siteService.getAllSites();
   }
