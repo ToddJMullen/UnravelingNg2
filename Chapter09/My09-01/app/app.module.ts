@@ -1,7 +1,10 @@
 import {NgModule}		from "@angular/core";
 import {BrowserModule}	from "@angular/platform-browser"
 
+import {UserAuthService} from "./login/user-auth.service";
+
 import {AppComponent}	from "./app.component";
+import {LoginComponent} from "./login/login.component"
 
 import {WelcomeModule}	from "./welcome/welcome.module";
 import {DiveLogModule}	from "./logs/dive-log.module";
@@ -20,6 +23,10 @@ import {routingModule} from "./app.routes";
 	]
 	,declarations: [
 		AppComponent
+		,LoginComponent
+	]
+	,providers: [
+		UserAuthService
 	]
 	,bootstrap: [AppComponent]
 })
