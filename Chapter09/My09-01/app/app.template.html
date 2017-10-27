@@ -18,6 +18,11 @@
           <a routerLink="/sites" routerLinkActive="active">Dive Sites</a>
         </li>
       </ul>
+		<button class="btn btn-default pull-right"
+			[disabled]="!authService.loggedInUser"
+			(click)="authService.logout()">
+			Logout
+		</button>
 <!--      <login></login>-->
     </div>
   </div>
