@@ -20,6 +20,7 @@
     <div class="col-sm-4" style="margin-top: 5px;">
       <div class="pull-right">
         <a class="btn btn-warning btn-sm"
+         	*ngIf="authService.loggedInUser"
           [routerLink]="['edit', site.id]">
           Edit
         </a>
