@@ -19,7 +19,7 @@
         </li>
       </ul>
 		<button class="btn btn-default pull-right"
-			[disabled]="!authService.loggedInUser"
+			*ngIf="authService.loggedInUser"
 			(click)="logout()">
 			Logout
 		</button>
