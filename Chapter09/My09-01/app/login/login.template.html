@@ -1,0 +1,29 @@
+<div class="text-right">
+	<h3>
+		 <img [hidden]="!inProgress" src="images/progressring.gif" />
+		 Login
+	</h3>
+	<button class="btn btn-default"
+		(click)="login('user')"
+		[disabled]="authService.loggedInUser">
+		Login as a User
+	</button>
+
+	<button class="btn btn-default"
+		(click)="login('admin')"
+		[disabled]="authService.loggedInUser">
+		Login as Admin
+	</button>
+
+	<button class="btn btn-default"
+		(click)="logout()"
+		[disabled]="!authService.loggedInUser">
+		Logout
+	</button>
+	<div class="row">
+		<div class="col-xs-12">
+
+		</div>
+	</div>
+
+</div>
