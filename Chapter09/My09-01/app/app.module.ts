@@ -5,13 +5,14 @@ import {UserAuthService} from "./login/user-auth.service";
 
 import {AppComponent}	from "./app.component";
 import {LoginComponent} from "./login/login.component"
+import {LoginModule}	from "./login/login.module"
 
 import {WelcomeModule}	from "./welcome/welcome.module";
 import {DiveLogModule}	from "./logs/dive-log.module";
 import {SiteModule}		from "./sites/site.module";
 
 
-import {routingModule} from "./app.routes";
+import {routingModule, routingProviders} from "./app.routes";
 
 @NgModule({
 	imports: [
@@ -20,13 +21,15 @@ import {routingModule} from "./app.routes";
 		,DiveLogModule
 		,SiteModule
 		,routingModule
+		,LoginModule
 	]
 	,declarations: [
 		AppComponent
-		,LoginComponent
+//		,LoginComponent
 	]
 	,providers: [
-		UserAuthService
+//		UserAuthService
+		routingProviders
 	]
 	,bootstrap: [AppComponent]
 })
