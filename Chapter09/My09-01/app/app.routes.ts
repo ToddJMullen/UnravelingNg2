@@ -3,6 +3,9 @@ import {WelcomeComponent}		from "./welcome/welcome.component";
 import {SiteListComponent}		from "./sites/site-list.component";
 import {DiveLogComponent}		from "./logs/dive-log.component";
 
+//add injectable guards
+import {CanDeavtivateGuard}			from "./routing/can-deactivate.guard";
+
 //add subroute module(s)
 import {siteRoutes}				from "./sites/site.routes";
 //add login elements
@@ -25,4 +28,5 @@ export const routingModule = RouterModule.forRoot( routeAry );
 export const routingProviders	= [
 	LoggedInGuard
 	,UserAuthService
+	,CanDeavtivateGuard
 ]
