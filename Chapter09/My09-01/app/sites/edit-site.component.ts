@@ -35,6 +35,10 @@ export class EditSiteComponent
   }
 
 
+//	allowLeave = () => this.siteName == this.ogSiteName;
+//	confirmPrompt = () => "You not finished!";
+
+
 	allowLeave(){
 		return this.siteName == this.ogSiteName;
 	}
