@@ -1,5 +1,6 @@
 import {NgModule}		from '@angular/core';
-import {BrowserModule}	from '@angular/platform-browser';
+//import {BrowserModule}	from '@angular/platform-browser';
+import {CommonModule}	from "@angular/common";
 import {RouterModule}	from '@angular/router';
 
 import {SiteComponent}			from "./site.component";
@@ -13,7 +14,8 @@ import {sitesRoutingModule}		from "./site.routes";
 
 @NgModule({
   imports: [
-    BrowserModule
+//    BrowserModule
+	  CommonModule
     ,RouterModule
 	,sitesRoutingModule
   ],
