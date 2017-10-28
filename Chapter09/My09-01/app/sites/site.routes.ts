@@ -8,7 +8,8 @@ import {CanDeavtivateGuard} from "../routing/can-deactivate.guard";
 
 export const siteRoutes: Routes = [
 	{
-		path: "sites"//base for these paths
+//		path: "sites"//base for these paths
+		path: ""//base for these paths now defined in lazy loading "trigger"
 		,component: SiteComponent//the host we created for just this purpose
 		,children: [
 			{path: "", component: SiteListComponent }
