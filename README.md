@@ -25,8 +25,17 @@ Chapter 6 - Focused on dividing up an appication into modules & sharing the piec
 
 Chapter 7 - Components...
 
+
 Chapter 8 - Forms
 Built a form for submitting a DiveLogEntry first using the "Form Template" method, then converted the form to a
 "Reactive Form" with custom multi-part validation for time & depth, then provided custom error messages for each
 of the possible errors.
 IDE(s) Atom 32bit on Win 8 & 64bit on Linux / ChaletOS
+
+Chapter 9 - THe Component Router
+Define all the app routes in a app.routes file. Separate all routes belonging to the Sites module into 
+a separate site.routes file/module. Defined a faux user authentication service to track login state.
+Create a login guard with canActivate to protect certain routes if not logged in and hide/remove elements if the user doesn't. Add exit guards to prevent navigating away from the Add or Edit state if
+changes have been made & would be lost using the canDeactivate interface. Switch the site.module to a
+lazy load pattern so that none of those resources are loaded unless / until needed.
+have permission.
