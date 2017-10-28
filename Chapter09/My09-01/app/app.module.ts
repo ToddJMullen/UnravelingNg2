@@ -9,7 +9,7 @@ import {LoginModule}	from "./login/login.module"
 
 import {WelcomeModule}	from "./welcome/welcome.module";
 import {DiveLogModule}	from "./logs/dive-log.module";
-import {SiteModule}		from "./sites/site.module";
+// !!! import {SiteModule}		from "./sites/site.module";
 
 
 import {routingModule, routingProviders} from "./app.routes";
@@ -19,7 +19,7 @@ import {routingModule, routingProviders} from "./app.routes";
 		BrowserModule
 		,WelcomeModule
 		,DiveLogModule
-		,SiteModule
+//		,!!! SiteModule
 		,routingModule
 		,LoginModule
 	]
