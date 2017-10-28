@@ -24,7 +24,7 @@ const routeAry:Routes = [
 //	, ...siteRoutes
 	//replace single sites/ path with all site sub-routes
 	,{path: "sites"//replace with static sub-routes to on-demand lazy loading
-	  	,loadChildren: "app/sites/sites.module#SitesModule"}
+	  	,loadChildren: "app/sites/site.module#SiteModule"}
 ];
 
 export const routingModule = RouterModule.forRoot( routeAry );
