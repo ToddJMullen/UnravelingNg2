@@ -7,7 +7,9 @@ import {DiveLogComponent}		from "./logs/dive-log.component";
 import {CanDeavtivateGuard}			from "./routing/can-deactivate.guard";
 
 //add subroute module(s)
-import {siteRoutes}				from "./sites/site.routes";
+//import {siteRoutes}				from "./sites/site.routes";
+//switching ^^^ to lazy load
+
 //add login elements
 import {UserAuthService}		from "./login/user-auth.service"
 import {LoggedInGuard} 			from "./login/logged-in.guard"
@@ -19,8 +21,10 @@ const routeAry:Routes = [
 		,canActivate: [LoggedInGuard]}
 	,{path: "login", component: LoginComponent }
 	,{path: "", pathMatch: "full", component: WelcomeComponent }
-	, ...siteRoutes
+//	, ...siteRoutes
 	//replace single sites/ path with all site sub-routes
+	,{path: "sites"//replace with static sub-routes to on-demand lazy loading
+	  	,loadChildren: "app/sites/sites.module#SitesModule"}
 ];
 
 export const routingModule = RouterModule.forRoot( routeAry );
