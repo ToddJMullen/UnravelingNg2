@@ -4,6 +4,7 @@ import {SiteListComponent} from "./site-list.component";
 import {AddSiteComponent} from "./add-site.component";
 import {EditSiteComponent} from "./edit-site.component";
 import {DeleteSiteComponent} from "./delete-site.component";
+import {CanDeavtivateGuard} from "../routing/can-deactivate.guard";
 
 export const siteRoutes: Routes = [
 	{
@@ -11,8 +12,8 @@ export const siteRoutes: Routes = [
 		,component: SiteComponent//the host we created for just this purpose
 		,children: [
 			{path: "", component: SiteListComponent }
-			,{path: "add", component: AddSiteComponent }
-			,{path: "edit/:id", component: EditSiteComponent }
+			,{path: "add", component: AddSiteComponent, canDeactivate: [CanDeavtivateGuard] }
+			,{path: "edit/:id", component: EditSiteComponent, canDeactivate: [CanDeavtivateGuard] }
 			,{path: "drop/:id", component: DeleteSiteComponent }
 		]
 	}
