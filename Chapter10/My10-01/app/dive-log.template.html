@@ -10,6 +10,7 @@
       <h3>{{dive.site | uppercase}}</h3>
       <h4>{{dive.location | lowercase}}</h4>
       <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+      <h2>Using diveData pipe: <br>{{dive | diveData:'<::>'}}</h2>
       <p>short: {{dive.divedOn | date:'short' }}</p>
       <p>MMMM: {{dive.divedOn | date:'MMMM' }}</p>
       <p>yy/mm/dd, hh:mm:ss: {{dive.divedOn | date:'yyyy/mm/dd, hh:mm:ss' }}</p>
