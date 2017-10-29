@@ -32,7 +32,8 @@ Built a form for submitting a DiveLogEntry first using the "Form Template" metho
 of the possible errors.
 IDE(s) Atom 32bit on Win 8 & 64bit on Linux / ChaletOS
 
-Chapter 9 - THe Component Router
+Chapter 9 - The Component Router
+IDEs Brackets on Linux 64b LInux, Atom on Windows 8 32b
 Define all the app routes in a app.routes file. Separate all routes belonging to the Sites module into 
 a separate site.routes file/module. Defined a faux user authentication service to track login state.
 Create a login guard with canActivate to protect certain routes if not logged in and hide/remove elements if the user doesn't. Add exit guards to prevent navigating away from the Add or Edit state if
