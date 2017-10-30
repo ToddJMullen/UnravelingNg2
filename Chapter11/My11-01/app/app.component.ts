@@ -2,6 +2,7 @@ import {Component, AfterViewInit, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/do';
+import "rxjs/add/operator/filter";
 
 @Component({
   selector: 'yw-app',
@@ -27,15 +28,18 @@ export class AppComponent implements AfterViewInit, OnInit {
   messages: any[] = [];
   listener: any;
   move$: Observable<any>;
+  counter = 0;
 
   log(message: any) {
-    this.messages.push(message)
+    this.messages.push(`${this.counter} message`)
   }
 
   ngOnInit(){
     this.log("ngOnInit()")
     let mousePad = document.getElementById('mousepad');
-    this.move$ = Observable.fromEvent( mousePad, "mousemove" );
+    this.move$ = Observable
+                  .fromEvent( mousePad, "mousemove" )
+                  .filter( val => this.counter++ % 4 == 0 );
     this.toggleSubscription()
   }
 
