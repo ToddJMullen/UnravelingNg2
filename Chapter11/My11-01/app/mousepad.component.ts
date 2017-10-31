@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {Subject}    from "rxjs/subject";
+import {Subject}    from "rxjs/Subject";
 
 @Component({
     selector: "mousepad"
