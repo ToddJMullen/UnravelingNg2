@@ -19,6 +19,8 @@ import {MousepadComponent} from "./mousepad.component";
       </div>
       MousePad:<br />
       <mousepad></mousepad>
+      <button (click)="resume()"
+      [disabled]="!this.mouseComp.isStopped()">Resume</button>
       <log-board [messages]="messages"></log-board>
     </div>
   `,
@@ -60,21 +62,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit() {
-    this.mouseComp.mouseEventStream$.subscribe(
-      (me:MouseEvent) => {//value events
-        this.counter++
-        this.log(`Move (${me.clientX}, ${me.clientY}) <= Pad #${this.mouseComp.counter}`);
-      }
-      ,() => {//error handler
-        this.counter++
-        this.log(`<b>Error!</b> <= Pad #${this.mouseComp.counter}`)
-      }
-      ,() => {//complete handler
-        this.counter++
-        this.log(`Complete! <= Pad #${this.mouseComp.counter}`)
-      }
-    );//stream.subscribe()
-
+    this.subscribe();
     // let mousepad = document.getElementById('mousepad');
     // let mouseMove$ = Observable
     //   .fromEvent(mousepad, 'mousemove')
@@ -89,6 +77,31 @@ export class AppComponent implements AfterViewInit, OnInit {
     // );
     // //add a second subscription
     // mouseMove$.subscribe();
+  }
+
+  subscribe(){
+    this.mouseComp.mouseEventStream$.subscribe(
+      (me:MouseEvent) => {//value events
+        this.counter++
+        this.log(`Move (${me.clientX}, ${me.clientY}) <= Pad #${this.mouseComp.counter}`);
+      }
+      ,() => {//error handler
+        this.counter++
+        this.log(`<b>Error!</b> <= Pad #${this.mouseComp.counter}`)
+      }
+      ,() => {//complete handler
+        this.counter++
+        this.log(`Complete! <= Pad #${this.mouseComp.counter}`)
+      }
+    );//stream.subscribe()
+  }//subscribe()
+
+  resume(){
+    if( this.mouseComp.isStopped() ){
+      this.log("Resuming...");
+      this.mouseComp.createStream();
+      this.subscribe();
+    }
   }
 
   toggleSubscription(){
