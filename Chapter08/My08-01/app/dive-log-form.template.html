@@ -1,49 +1,98 @@
-<form>
+<form *ngIf="!submitted"
+	(ngSubmit)="doSubmit()"
+	[formGroup]="formDiveLog"
+>
+<!-- #formDiveLog="ngForm" -->
   <div class="row">
+	<h1>Enter a new Dive Log Record</h1>
     <div class="col-sm-6">
-      <div class="form-group">
+      <div class="form-group"
+		  [class.has-error]="notvalid('site')" >
         <label for="site">Dive site</label>
-        <input name="site" id="site" class="form-control"
-			[(ngModel)]="entry.site"
-			required
-          	placeholder="Dive site">
+        <input id="site" class="form-control"
+			formControlName="site"
+          	placeholder="Dive site" />
+		<div *ngIf="notvalid('site')" class="help-block">
+			Error: {{getValidationMsg("site")}}
+		</div>
+		<!-- <div *ngIf="notvalid('site')" class="help-block">
+			Please use only letters &amp; numbers.
+		</div> -->
+		<!-- [(ngModel)]="entry.site"
+		[class.has-error]="tiSite.invalid"
+		required pattern="[a-zA-Z0-9 &]+"
+		name="site"
+		#tiSite="ngModel" -->
+
+		<!-- <div *ngIf="tiSite.errors?.required" class="help-block"> -->
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="form-group">
+      <div class="form-group"
+	  	[class.has-error]="notvalid('location')">
         <label for="location">Location</label>
-        <input name="location" id="location" class="form-control"
-			[(ngModel)]="entry.location"
-			required
+        <input id="location" class="form-control"
+			formControlName="location"
           	placeholder="Location">
+		<div *ngIf="notvalid('location')" class="help-msg">
+			Error: {{getValidationMsg("location")}}
+		</div>
+		<!-- name="location"
+		[(ngModel)]="entry.location"
+		#tiLocation="ngModel"
+		[class.has-error]="tiLocation.invalid"
+		required -->
+		<!-- <div *ngIf="tiLocation.errors?.required" class="help-msg"> -->
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-sm-3">
-      <div class="form-group">
+      <div class="form-group"
+	  		[class.has-error]="notvalid('depth')">
         <label for="depth">Max. depth</label>
-        <input name="depth" id="depth" type="number" class="form-control"
-				[(ngModel)]="entry.depth"
-				required
-				max="500" maxlength="2" >
+		<input id="depth" class="form-control"
+				formControlName="depth">
+		<div *ngIf="notvalid('depth')" class="help-msg">
+			Error: {{getValidationMsg("depth")}}
+		</div>
+		<!-- <input name="depth" id="depth" type="number" class="form-control"
+		[(ngModel)]="entry.depth"
+		#tiDepth="ngModel"
+		[class.has-error]="tiDepth.invalid"
+		required
+		max="500" maxlength="2" >
+		<div *ngIf="tiDepth.errors?.required" class="help-msg">
+			Please enter the depth of the dive.
+		</div>
+		-->
       </div>
     </div>
     <div class="col-sm-3">
-      <div class="form-group">
+      <div class="form-group"
+	  [class.has-errors]="notvalid('time')">
         <label for="time">Bottom time</label>
-        <input name="time" name="time" id="time" class="form-control"
+        <input id="time" class="form-control"
+				formControlName="time"
 				type="number" max="240"
-				[(ngModel)]="entry.time"
-				required
 				>
+				<!-- [(ngModel)]="entry.time"
+				#tiTime="ngModel"
+				[class.has-error]="tiTime.invalid"
+				required -->
+		<div *ngIf="notvalid('time')" class="help-msg">
+			Error: {{getValidationMsg("time")}}
+		</div>
       </div>
     </div>
   </div>
+
+
   <div class="checkbox">
     <label>
-      <input name="favorite" type="checkbox"
-	  		[(ngModel)]="entry.isFavorite" >
+      <input type="checkbox"
+	  		formControlName="isFavorite" >
       Mark as favorite
     </label>
   </div>
@@ -52,20 +101,31 @@
     <div class="radio"
       *ngFor="let diveType of specialDivesAry">
       <label>
-        <input name="special" type="radio" [value]="diveType"
-				[(ngModel)]="entry.special">
+        <input type="radio"
+			formControlName="special"
+			[value]="diveType"
+				>
+				<!-- name="special"
+				[(ngModel)]="entry.special" -->
         {{diveType}}
       </label>
     </div>
   </div>
+
   <div class="form-group">
     <label for="comments">Comments</label>
-    <textarea name="comments" id="comments" rows="5" class="form-control"
-    		[(ngModel)]="entry.comments"></textarea>
+    <textarea id="comments" rows="5" class="form-control"
+    		formControlName="comments"
+			></textarea>
+			<!-- name="comments"
+			[(ngModel)]="entry.comments" -->
   </div>
-  <button class="btn btn-primary" type="submit">
+  <button class="btn btn-primary" type="submit"
+  	[disabled]="formDiveLog.invalid">
     Submit
   </button>
-  <br>
-  <pre>{{entry | json}}</pre>
 </form>
+
+<hr>
+  <h2 *ngIf="submitted">The form has been submitted as:</h2>
+<pre>{{submittedDive | json}}</pre>

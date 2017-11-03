@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <h1>My Latest Dives</h1>
+  <p>Avg Time: {{avgTime()}}, Avg Depth: {{avgDepth()}}</p>
+  <p>Avg Time: {{avgTime() | number:'1.1-3'}},
+       Avg Depth: {{avgDepth() | number:'2.1-2'}}</p>
+  <div class="row">
+        <number-list></number-list>
+    <div class="col-sm-4"
+      *ngFor="let dive of dives">
+      <h3>{{dive.site | uppercase}}</h3>
+      <h4>{{dive.location | lowercase}}</h4>
+      <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+      <h2>Using diveData pipe: <br>{{dive | diveData:'<::>'}}</h2>
+      <p>short: {{dive.divedOn | date:'short' }}</p>
+      <p>MMMM: {{dive.divedOn | date:'MMMM' }}</p>
+      <p>yy/mm/dd, hh:mm:ss: {{dive.divedOn | date:'yyyy/mm/dd, hh:mm:ss' }}</p>
+      <p>Paid (currency:'USD':true:'4.1-4'):
+          {{ dive.paid | currency:'USD':true:'4.1-4'}}</p>
+        <p>Paid (currency:'EUR':true:'1.0-4'):
+                {{ dive.paid | currency:'USD':true:'1.0-4'}}
+            <br />(Note: min digits 0 give out of range error)
+        </p>
+        <p>Percent Time (percent:'1.0-2'): {{dive.time / avgTime() | percent:'1.0-2'}}
+            Percent Depth (percent:'2.1-2') {{dive.depth / avgDepth() | percent:'2.1-2'}}
+        </p>    
+
+
+      <pre>{{dive | json}}</pre>
+    </div>
+  </div>
+</div>

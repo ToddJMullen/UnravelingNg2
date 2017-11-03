@@ -4,7 +4,6 @@ import {Component} from '@angular/core';
   selector: 'yw-app',
   template: `
     <div class="container">
-      <h1>Enter a new Dive Log Record</h1>
       <dive-log-form></dive-log-form>
     </div>
   `

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>My Numbers</h1>
+  <div class="row" style="margin-bottom: 12px;">
+    <div class="col-xs-6">
+      <input #startNum class="form-control input-lg"
+        placeholder="Start"
+        value="0" type="number" min="-100" max="100"
+        (change)="start=toValue(startNum.value, 0)" />
+    </div>
+    <div class="col-xs-6">
+      <input #endNum class="form-control input-lg"
+        placeholder="End"
+        value="100" type="number" min="-100" max="100"
+        (change)="end=toValue(endNum.value, null)" />
+    </div>
+    <div class="col-xs-6">
+      <input #startRng class="form-control input-lg"
+        placeholder="Start"
+        value="0" type="range" min="-100" max="100"
+        (change)="start=toValue(startRng.value, 0)" />
+    </div>
+    <div class="col-xs-6">
+      <input #endRng class="form-control input-lg"
+        placeholder="End"
+        value="100" type="range" min="-100" max="100"
+        (change)="end=toValue(endRng.value, null)" />
+    </div>
+  </div>
+  <span *ngFor="let num of numbers | slice:start:end"
+    class="number">
+    {{num}}
+  </span>
+</div>
